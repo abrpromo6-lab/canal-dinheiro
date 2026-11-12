@@ -63,6 +63,12 @@ export type Cena = {
   descricao: string;
   camera?: { de: Camera; para: Camera };
   painel: Painel;
+  /** Opcional: ponto de interesse da ilustração, em % da tela (padrão 50, 55). O resto escurece. */
+  foco?: { x: number; y: number };
+  /** Opcional: som ambiente da cena em public/ (ex.: "sons/chuva.mp3"), toca em loop baixinho. */
+  ambiente?: string;
+  /** Opcional: altura da legenda em px (padrão 1370). Use para não cobrir o personagem. */
+  legendaTopo?: number;
   /** Opcional: segundo da cena em que o overlay sai e a ilustração volta. Sem isso, fica até o fim da cena. */
   overlayFim?: number;
   overlay?: Overlay;
@@ -74,11 +80,20 @@ export type Episodio = {
   titulo: string;
   fps: number;
   velocidadeFala: number; // palavras por segundo (estimativa até ter a voz)
+  /** Sons do episódio em public/. Os que não existirem são ignorados. */
+  sons?: {
+    musica?: string; // trilha de fundo, em loop, bem baixa
+    corte?: string; // whoosh quando entra cartão/gráfico em tela cheia
+    impacto?: string; // grave seco nas palavras-chave (WRONG., STRUCTURING, SEIZED)
+    tique?: string; // quando os números do painel mudam
+  };
   cenas: Cena[];
 };
 
 export type EpisodioProps = {
   episodio: Episodio;
-  /** Preenchido pelo calculateMetadata: quais ilustrações já existem em public/. */
-  imagensDisponiveis?: Record<string, boolean>;
+  /** Preenchido pelo calculateMetadata: caminho do JSON → arquivo encontrado em public/ (ou null se faltar). */
+  imagensDisponiveis?: Record<string, string | null>;
+  /** Preenchido pelo calculateMetadata: quais sons existem em public/. */
+  sonsDisponiveis?: Record<string, boolean>;
 };

@@ -40,7 +40,7 @@ export const Legenda: React.FC<{ cena: Cena; velocidade: number }> = ({ cena, ve
         position: "absolute",
         left: 80,
         right: 80,
-        top: 1370,
+        top: cena.legendaTopo ?? 1370,
         textAlign: "center",
         fontFamily: fonte,
         fontWeight: 800,

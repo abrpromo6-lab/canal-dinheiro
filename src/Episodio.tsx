@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
+import { AbsoluteFill, Audio, interpolate, Sequence, staticFile } from "remotion";
 import "./estilo";
 import { cores } from "./estilo";
 import { CenaIlustrada } from "./componentes/CenaIlustrada";
@@ -8,7 +8,9 @@ import { CartaoTexto } from "./componentes/CartaoTexto";
 import { GraficoBarras } from "./componentes/GraficoBarras";
 import { PalavraChave } from "./componentes/PalavraChave";
 import { TelaParte2 } from "./componentes/TelaParte2";
-import type { EpisodioProps, Overlay } from "./tipos";
+import type { EpisodioProps, Overlay, Painel } from "./tipos";
+
+const telaCheia = (o: Overlay) => o.tipo !== "palavra" || o.tela === true;
 
 const ConteudoOverlay: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
   switch (overlay.tipo) {
@@ -23,8 +25,20 @@ const ConteudoOverlay: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
   }
 };
 
-export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis = {} }) => {
+/** Toca um efeito curto a partir de `from` (só se o arquivo existir). */
+const Efeito: React.FC<{ src?: string; ok: Record<string, boolean>; from: number; volume: number }> = ({ src, ok, from, volume }) =>
+  src && ok[src] ? (
+    <Sequence from={from} durationInFrames={60} layout="none">
+      <Audio src={staticFile(src)} volume={volume} />
+    </Sequence>
+  ) : null;
+
+const mudouPainel = (a: Painel, b: Painel) =>
+  a.cash !== b.cash || a.banked !== b.banked || a.suspicion !== b.suspicion || a.rotuloBanked !== b.rotuloBanked;
+
+export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis = {}, sonsDisponiveis = {} }) => {
   const { fps } = episodio;
+  const sons = episodio.sons ?? {};
 
   let acumulado = 0;
   const cenas = episodio.cenas.map((c) => {
@@ -44,7 +58,7 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
         return (
           <Sequence key={c.id} from={c.inicio} durationInFrames={c.quadros} name={`${c.id} · ${c.descricao}`}>
             {/* Ordem das camadas: ilustração → legenda → painel → overlay (o overlay de tela cheia cobre os outros) */}
-            <CenaIlustrada cena={c} disponivel={!!c.ilustracao && !!imagensDisponiveis[c.ilustracao]} />
+            <CenaIlustrada cena={c} arquivo={c.ilustracao ? imagensDisponiveis[c.ilustracao] ?? null : null} />
             <Legenda cena={c} velocidade={episodio.velocidadeFala} />
             <PainelDinheiro de={painelAnterior} para={c.painel} />
             {c.overlay ? (
@@ -53,9 +67,23 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
               </Sequence>
             ) : null}
             {c.audio ? <Audio src={staticFile(c.audio)} /> : null}
+            {/* Ambiente da cena: entra e sai em 8 quadros */}
+            {c.ambiente && sonsDisponiveis[c.ambiente] ? (
+              <Audio
+                src={staticFile(c.ambiente)}
+                loop
+                volume={(f) =>
+                  0.22 * interpolate(f, [0, 8, c.quadros - 8, c.quadros], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })
+                }
+              />
+            ) : null}
+            {mudouPainel(painelAnterior, c.painel) ? <Efeito src={sons.tique} ok={sonsDisponiveis} from={0} volume={0.35} /> : null}
+            {c.overlay && telaCheia(c.overlay) ? <Efeito src={sons.corte} ok={sonsDisponiveis} from={atrasoOverlay} volume={0.5} /> : null}
+            {c.overlay?.tipo === "palavra" ? <Efeito src={sons.impacto} ok={sonsDisponiveis} from={atrasoOverlay + 3} volume={0.7} /> : null}
           </Sequence>
         );
       })}
+      {sons.musica && sonsDisponiveis[sons.musica] ? <Audio src={staticFile(sons.musica)} loop volume={0.1} /> : null}
     </AbsoluteFill>
   );
 };

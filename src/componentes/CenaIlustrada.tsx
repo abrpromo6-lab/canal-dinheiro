@@ -1,11 +1,12 @@
 import { AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { cores, fonte, mono } from "../estilo";
 import type { Camera, Cena } from "../tipos";
+import { Atmosfera } from "./Atmosfera";
 
 const PARADA: { de: Camera; para: Camera } = { de: { zoom: 1.05, x: 0, y: 0 }, para: { zoom: 1.12, x: 0, y: 0 } };
 
 /** Ilustração em tela cheia com zoom/pan lento. Sem imagem, mostra um placeholder. */
-export const CenaIlustrada: React.FC<{ cena: Cena; disponivel: boolean }> = ({ cena, disponivel }) => {
+export const CenaIlustrada: React.FC<{ cena: Cena; arquivo: string | null }> = ({ cena, arquivo }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   if (!cena.ilustracao) return <AbsoluteFill style={{ backgroundColor: cores.fundo }} />;
@@ -22,12 +23,16 @@ export const CenaIlustrada: React.FC<{ cena: Cena; disponivel: boolean }> = ({ c
   return (
     <AbsoluteFill style={{ overflow: "hidden", backgroundColor: cores.fundo }}>
       <AbsoluteFill style={{ transform: `translate(${x}px, ${y}px) scale(${zoom})` }}>
-        {disponivel ? (
-          <Img src={staticFile(cena.ilustracao)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        {arquivo ? (
+          <Img
+            src={staticFile(arquivo)}
+            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "contrast(1.08) saturate(0.88) brightness(0.92)" }}
+          />
         ) : (
           <Placeholder cena={cena} />
         )}
       </AbsoluteFill>
+      <Atmosfera foco={cena.foco} />
       {/* Leve escurecida embaixo para a legenda */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%)" }} />
     </AbsoluteFill>

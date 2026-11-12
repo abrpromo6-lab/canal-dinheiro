@@ -3,7 +3,13 @@
   "serie": "$10M in cash",
   "titulo": "Part 1: The Bank",
   "fps": 30,
-  "velocidadeFala": 3.0,
+  "velocidadeFala": 3,
+  "sons": {
+    "musica": "sons/musica-tensa.mp3",
+    "corte": "sons/whoosh.mp3",
+    "impacto": "sons/impacto.mp3",
+    "tique": "sons/tique.mp3"
+  },
   "cenas": [
     {
       "id": "s01",
@@ -11,8 +17,29 @@
       "fala": "You have ten million dollars in cash. And you can't spend a single bill. Watch what happens when you try.",
       "ilustracao": "cenas/ep01-armario.png",
       "descricao": "Mint's basement apartment: closet bursting with cash bricks",
-      "camera": { "de": { "zoom": 1.3, "x": 0, "y": 60 }, "para": { "zoom": 1.05, "x": 0, "y": 0 } },
-      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 }
+      "legendaTopo": 1060,
+      "foco": {
+        "x": 62,
+        "y": 52
+      },
+      "ambiente": "sons/chuva-porao.mp3",
+      "camera": {
+        "de": {
+          "zoom": 1.3,
+          "x": 0,
+          "y": 60
+        },
+        "para": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      }
     },
     {
       "id": "s02",
@@ -20,11 +47,32 @@
       "fala": "First: it weighs about a hundred kilos. You can't exactly carry it into a store.",
       "ilustracao": "cenas/ep01-peso.png",
       "descricao": "Same apartment: Mint straining to lift a duffel of cash",
-      "camera": { "de": { "zoom": 1.05, "x": -30, "y": 0 }, "para": { "zoom": 1.15, "x": 30, "y": -20 } },
-      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "camera": {
+        "de": {
+          "zoom": 1.05,
+          "x": -30,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.15,
+          "x": 30,
+          "y": -20
+        }
+      },
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "ambiente": "sons/chuva-porao.mp3",
+      "legendaTopo": 1000,
+      "foco": {
+        "x": 48,
+        "y": 68
+      },
       "overlay": {
         "tipo": "cartao",
-        "inicio": 1.0,
+        "inicio": 2.1,
         "fundo": "bege",
         "kicker": "Problem one: weight",
         "titulo": "100,000 hundred-dollar bills",
@@ -38,8 +86,23 @@
       "fala": "So, the bank. Walk in with more than ten grand in cash, and the bank reports you. Automatically. Every time.",
       "ilustracao": "cenas/ep01-banco.png",
       "descricao": "Bank lobby: Mint dumping cash on the teller counter",
-      "camera": { "de": { "zoom": 1.1, "x": 40, "y": 0 }, "para": { "zoom": 1.15, "x": -40, "y": 0 } },
-      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "camera": {
+        "de": {
+          "zoom": 1.1,
+          "x": 40,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.15,
+          "x": -40,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      },
       "overlay": {
         "tipo": "cartao",
         "inicio": 2.2,
@@ -49,14 +112,19 @@
         "destaque": "$10,000",
         "sub": "= a report to the government. Automatically.",
         "nota": "Currency Transaction Report · 31 CFR § 1010.311"
-      }
+      },
+      "ambiente": "sons/banco.mp3"
     },
     {
       "id": "s04",
       "duracao": 5.2,
       "fala": "Okay. So you play it smart. Nine thousand. Every day. Never over the line.",
       "descricao": "Gráfico (sem ilustração)",
-      "painel": { "cash": 9991000, "banked": 9000, "suspicion": 5 },
+      "painel": {
+        "cash": 9991000,
+        "banked": 9000,
+        "suspicion": 5
+      },
       "overlay": {
         "tipo": "grafico",
         "fundo": "bege",
@@ -66,11 +134,26 @@
         "limite": 10000,
         "rotuloLimite": "$10,000 · AUTO-REPORT",
         "barras": [
-          { "rotulo": "MON", "valor": 9000 },
-          { "rotulo": "TUE", "valor": 9000 },
-          { "rotulo": "WED", "valor": 9000 },
-          { "rotulo": "THU", "valor": 9000 },
-          { "rotulo": "FRI", "valor": 9000 }
+          {
+            "rotulo": "MON",
+            "valor": 9000
+          },
+          {
+            "rotulo": "TUE",
+            "valor": 9000
+          },
+          {
+            "rotulo": "WED",
+            "valor": 9000
+          },
+          {
+            "rotulo": "THU",
+            "valor": 9000
+          },
+          {
+            "rotulo": "FRI",
+            "valor": 9000
+          }
         ]
       }
     },
@@ -79,8 +162,17 @@
       "duracao": 1.8,
       "fala": "Easy, right? Wrong.",
       "descricao": "Virada (sem ilustração)",
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 30 },
-      "overlay": { "tipo": "palavra", "tela": true, "kicker": "Easy, right?", "texto": "WRONG." }
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 30
+      },
+      "overlay": {
+        "tipo": "palavra",
+        "tela": true,
+        "kicker": "Easy, right?",
+        "texto": "WRONG."
+      }
     },
     {
       "id": "s06",
@@ -88,8 +180,23 @@
       "fala": "The bank's software isn't counting deposits. It's hunting patterns. Three branches, same day? It adds them up.",
       "ilustracao": "cenas/ep01-analista.png",
       "descricao": "Bank back office: analyst at a wall of monitors, Mint's photo on screen",
-      "camera": { "de": { "zoom": 1.05, "x": 0, "y": 0 }, "para": { "zoom": 1.2, "x": -40, "y": 20 } },
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 45 },
+      "camera": {
+        "de": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.2,
+          "x": -40,
+          "y": 20
+        }
+      },
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 45
+      },
       "overlay": {
         "tipo": "grafico",
         "inicio": 3.4,
@@ -99,12 +206,25 @@
         "limite": 10000,
         "rotuloLimite": "$10,000 · AUTO-REPORT",
         "barras": [
-          { "rotulo": "BRANCH A", "valor": 4000 },
-          { "rotulo": "BRANCH B", "valor": 3500 },
-          { "rotulo": "BRANCH C", "valor": 3000 },
-          { "rotulo": "TOTAL", "valor": 10500 }
+          {
+            "rotulo": "BRANCH A",
+            "valor": 4000
+          },
+          {
+            "rotulo": "BRANCH B",
+            "valor": 3500
+          },
+          {
+            "rotulo": "BRANCH C",
+            "valor": 3000
+          },
+          {
+            "rotulo": "TOTAL",
+            "valor": 10500
+          }
         ]
-      }
+      },
+      "ambiente": "sons/escritorio-noite.mp3"
     },
     {
       "id": "s07",
@@ -112,8 +232,23 @@
       "fala": "And always just under ten thousand? That's the exact pattern it's trained to catch. It even has a name.",
       "ilustracao": "cenas/ep01-analista.png",
       "descricao": "Same back office, closer on the monitors",
-      "camera": { "de": { "zoom": 1.35, "x": 60, "y": 80 }, "para": { "zoom": 1.6, "x": 80, "y": 120 } },
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 65 },
+      "camera": {
+        "de": {
+          "zoom": 1.35,
+          "x": 60,
+          "y": 80
+        },
+        "para": {
+          "zoom": 1.6,
+          "x": 80,
+          "y": 120
+        }
+      },
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 65
+      },
       "overlay": {
         "tipo": "cartao",
         "inicio": 2.2,
@@ -122,22 +257,36 @@
         "destaque": "Red flag.",
         "corDestaque": "destaque",
         "sub": "Exactly what the software is built to catch."
-      }
+      },
+      "ambiente": "sons/escritorio-noite.mp3"
     },
     {
       "id": "s08",
       "duracao": 1.4,
       "fala": "Structuring.",
       "descricao": "Palavra-chave (sem ilustração)",
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 80 },
-      "overlay": { "tipo": "palavra", "tela": true, "kicker": "The name", "texto": "STRUCTURING" }
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 80
+      },
+      "overlay": {
+        "tipo": "palavra",
+        "tela": true,
+        "kicker": "The name",
+        "texto": "STRUCTURING"
+      }
     },
     {
       "id": "s09",
       "duracao": 6.5,
       "fala": "A federal crime all by itself, even if every dollar is legal. Up to five years in prison.",
       "descricao": "Cartão escuro (sem ilustração)",
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 85 },
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 85
+      },
       "overlay": {
         "tipo": "cartao",
         "fundo": "escuro",
@@ -154,8 +303,23 @@
       "fala": "Here's the scary part. The bank files a secret report on you, and by law, it can't tell you. You keep smiling at the teller. The file keeps growing.",
       "ilustracao": "cenas/ep01-relatorio.png",
       "descricao": "Cutaway: Mint smiling at the teller; behind the wall, a thick folder",
-      "camera": { "de": { "zoom": 1.1, "x": -50, "y": 0 }, "para": { "zoom": 1.15, "x": 50, "y": 0 } },
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 95 },
+      "camera": {
+        "de": {
+          "zoom": 1.1,
+          "x": -50,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.15,
+          "x": 50,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 95
+      },
       "overlayFim": 6.4,
       "overlay": {
         "tipo": "cartao",
@@ -166,7 +330,8 @@
         "corDestaque": "destaque",
         "sub": "And by law, nobody tells you.",
         "nota": "31 CFR § 1020.320"
-      }
+      },
+      "ambiente": "sons/banco.mp3"
     },
     {
       "id": "s11",
@@ -174,8 +339,23 @@
       "fala": "Think that's just for gangsters? A former Speaker of the House got fifteen months for this. Not for the money. For the way he moved it.",
       "ilustracao": "cenas/ep01-corredor.png",
       "descricao": "Symbolic: empty marble hallway, cell-bar shadows on the floor",
-      "camera": { "de": { "zoom": 1.0, "x": 0, "y": -30 }, "para": { "zoom": 1.15, "x": 0, "y": 20 } },
-      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 95 },
+      "camera": {
+        "de": {
+          "zoom": 1,
+          "x": 0,
+          "y": -30
+        },
+        "para": {
+          "zoom": 1.15,
+          "x": 0,
+          "y": 20
+        }
+      },
+      "painel": {
+        "cash": 9757000,
+        "banked": 243000,
+        "suspicion": 95
+      },
       "overlay": {
         "tipo": "cartao",
         "inicio": 1.9,
@@ -184,7 +364,8 @@
         "titulo": "Former U.S. House Speaker",
         "destaque": "15 months",
         "sub": "Not for the money. For the way he moved it."
-      }
+      },
+      "ambiente": "sons/corredor.mp3"
     },
     {
       "id": "s12",
@@ -192,9 +373,30 @@
       "fala": "And then? They can take it. Every dollar you deposited. Seized.",
       "ilustracao": "cenas/ep01-apreensao.png",
       "descricao": "Outside the bank at dusk: agents loading evidence boxes, Mint in shock",
-      "camera": { "de": { "zoom": 1.3, "x": 0, "y": 0 }, "para": { "zoom": 1.05, "x": 0, "y": 0 } },
-      "painel": { "cash": 9757000, "banked": 0, "suspicion": 100, "rotuloBanked": "SEIZED" },
-      "overlay": { "tipo": "palavra", "inicio": 3.4, "texto": "SEIZED" }
+      "camera": {
+        "de": {
+          "zoom": 1.3,
+          "x": 0,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 9757000,
+        "banked": 0,
+        "suspicion": 100,
+        "rotuloBanked": "SEIZED"
+      },
+      "overlay": {
+        "tipo": "palavra",
+        "inicio": 3.4,
+        "texto": "SEIZED"
+      },
+      "ambiente": "sons/rua-sirene.mp3"
     },
     {
       "id": "s13",
@@ -202,16 +404,35 @@
       "fala": "So the bank is a dead end. Rewind. Ten million, back in your closet. Bury it, or blow it? Comment BURY or BLOW. Most votes decides part two.",
       "ilustracao": "cenas/ep01-dilema.png",
       "descricao": "Mint's apartment again: torn between a shovel and a car key",
-      "camera": { "de": { "zoom": 1.05, "x": 0, "y": 0 }, "para": { "zoom": 1.15, "x": 0, "y": -20 } },
-      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "camera": {
+        "de": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.15,
+          "x": 0,
+          "y": -20
+        }
+      },
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      },
       "overlay": {
         "tipo": "parte2",
         "inicio": 4.8,
         "kicker": "The bank is a dead end",
         "linha1": "PART 2",
         "linha2": "drops tomorrow.",
-        "sub": ["Bury it or blow it?", "Comment BURY or BLOW. Most votes wins."]
-      }
+        "sub": [
+          "Bury it or blow it?",
+          "Comment BURY or BLOW. Most votes wins."
+        ]
+      },
+      "ambiente": "sons/chuva-porao.mp3"
     }
   ]
 }
