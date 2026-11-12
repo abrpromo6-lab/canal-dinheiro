@@ -12,7 +12,7 @@ Referência visual (vídeo que o Abr mandou): história "you have $10M in cash",
 
 - **Ilustrações** em estilo quadrinho detalhado, com um personagem de cabeça redonda branca em cenários ricos. São geradas por IA de imagem (o Claude não gera imagem): o Abr gera no Gemini ou no ChatGPT com prompts que nós escrevemos.
 - **Motion graphics no Remotion:** painel fixo no topo (CASH / BANKED / SUSPICION mudando ao longo da história), cartões bege com tipografia forte ("$10M in hundreds = 100 kg"), gráficos simples (barras de $9k abaixo da linha de $10k), palavra-chave grande ("STRUCTURING") e legenda palavra por palavra.
-- **Final em série:** "PART 2 TOMORROW — Comment HIDE or SPEND. The majority writes Part 2."
+- **Final em série (da referência, não copiar o texto):** "PART 2 TOMORROW — Comment HIDE or SPEND. The majority writes Part 2."
 - Movimento de câmera (zoom e pan) sobre as ilustrações.
 
 O personagem e a identidade visual precisam ser **nossos**, não cópia do canal de referência.
@@ -59,8 +59,10 @@ Não foi possível medir o desempenho do **estilo** da referência (ilustração
 
 ### Estado (2026-11-12)
 
-- Episódio 1 pronto em `src/episodios/ep01.json` (89 s, 12 cenas). Roteiro com fontes em `docs/ep01-roteiro.md`; prompts em `docs/ep01-prompts.md`.
-- Personagem fixo do canal: **Mint** (cabeça verde-menta em forma de tijolo arredondado, moletom mostarda). A descrição está em `docs/ep01-prompts.md`; reutilizar igual em todo episódio.
+- Episódio 1 pronto em `src/episodios/ep01.json` (83 s, 13 cenas, 8 ilustrações, narração em ritmo rápido). Roteiro com fontes em `docs/ep01-roteiro.md`; prompts em `docs/ep01-prompts.md`.
+- Personagem fixo do canal: **Mint** (cabeça verde-menta em forma de tijolo arredondado, moletom mostarda, tênis plataforma branco, elástico vermelho duplo no pulso esquerdo). A descrição está em `docs/ep01-prompts.md`; reutilizar igual em todo episódio.
+- Identidade visual (v2, inspirada no acabamento da referência, mas com palavras e cores nossas): preto quente `#14120F` + bege `#EFE9DD`, destaque laranja `#FF5B2E`; títulos em Inter Display Black, rótulos em JetBrains Mono; cartões e gráficos em tela cheia; painel ON HAND / DEPOSITED / HEAT; legenda discreta em branco. Ilustrações com cenário profundo: plano aberto do alto, personagem pequeno, luz fria azul-petróleo contra luz âmbar. Cenário fixo: o porão-apartamento do Mint.
+- **Não copiar textos da referência:** os rótulos do painel deles (CASH / BANKED / SUSPICION), o "RULE 1" e o final "Comment HIDE or SPEND. The majority writes Part 2." são deles. O nosso final usa BURY ou BLOW.
 - O `calculateMetadata` em `src/Root.tsx` verifica quais imagens existem em `public/cenas/`; as que faltam viram placeholder.
 - Legenda: sem áudio, usa `velocidadeFala`. Com áudio, preencher `audio` e `palavras` (tempos por palavra) em cada cena e ajustar `duracao`.
 
@@ -68,4 +70,4 @@ Não foi possível medir o desempenho do **estilo** da referência (ilustração
 
 1. Abr gera as ilustrações e confere os pontos marcados em `docs/ep01-roteiro.md`.
 2. Escolher a voz sintética, gerar o áudio por cena e encaixar os tempos no JSON.
-3. Episódio 2 conforme a votação (HIDE ou SPEND).
+3. Episódio 2 conforme a votação (BURY ou BLOW).

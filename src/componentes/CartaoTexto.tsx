@@ -1,52 +1,67 @@
-import { spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { cores, fonte } from "../estilo";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { cores, fonte, mono, temaDe, type Fundo } from "../estilo";
+import { Kicker } from "./Kicker";
+import { entrar, opacidadeCorte } from "./animacao";
 
-/** Cartão bege com título, número/frase em destaque e linha de apoio. */
-export const CartaoTexto: React.FC<{ titulo: string; destaque: string; sub?: string; atraso?: number }> = ({
-  titulo,
-  destaque,
-  sub,
-  atraso = 8,
-}) => {
+/** Cartão de tela cheia: rótulo mono, título, número/frase em destaque, linha de apoio e nota (fonte). */
+export const CartaoTexto: React.FC<{
+  fundo?: Fundo;
+  kicker?: string;
+  titulo?: string;
+  destaque: string;
+  corDestaque?: "texto" | "destaque" | "verde";
+  sub?: string;
+  nota?: string;
+}> = ({ fundo = "bege", kicker, titulo, destaque, corDestaque = "texto", sub, nota }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const s = spring({ frame: frame - atraso, fps, config: { damping: 14, stiffness: 140 } });
-  const sDestaque = spring({ frame: frame - atraso - 8, fps, config: { damping: 10, stiffness: 160 } });
+  const tema = temaDe(fundo);
+  const cor = corDestaque === "destaque" ? cores.destaque : corDestaque === "verde" ? cores.verde : tema.texto;
+  const s = spring({ frame: frame - 6, fps, config: { damping: 14, stiffness: 150 } });
+  const tamanhoDestaque = destaque.length > 12 ? 128 : 170;
 
   return (
-    <div
+    <AbsoluteFill
       style={{
-        position: "absolute",
-        top: 560,
-        left: 80,
-        right: 80,
-        transform: `translateY(${(1 - s) * 120}px) rotate(${(1 - s) * -4 - 1.2}deg)`,
-        opacity: s,
-        background: cores.bege,
-        borderRadius: 26,
-        padding: "44px 48px 48px",
-        boxShadow: `0 14px 0 ${cores.begeEscuro}, 0 30px 60px rgba(0,0,0,0.45)`,
-        fontFamily: fonte,
-        color: cores.tinta,
+        backgroundColor: tema.fundo,
+        opacity: opacidadeCorte(frame),
+        alignItems: "center",
         textAlign: "center",
+        padding: "330px 70px 0",
+        fontFamily: fonte,
+        color: tema.texto,
       }}
     >
-      <div style={{ fontSize: 46, fontWeight: 800, letterSpacing: 1 }}>{titulo}</div>
+      {kicker ? <Kicker cor={tema.secundario} style={entrar(frame, fps, 0)}>{kicker}</Kicker> : null}
+      {titulo ? (
+        <div style={{ marginTop: 150, fontSize: 68, fontWeight: 900, letterSpacing: -1.5, lineHeight: 1.05, ...entrar(frame, fps, 3) }}>
+          {titulo}
+        </div>
+      ) : null}
       <div
         style={{
-          fontSize: destaque.length > 12 ? 104 : 132,
+          marginTop: titulo ? 6 : 150,
+          fontSize: tamanhoDestaque,
           fontWeight: 900,
-          lineHeight: 1,
-          marginTop: 18,
-          transform: `scale(${0.6 + 0.4 * sDestaque})`,
-          opacity: sDestaque,
+          letterSpacing: -tamanhoDestaque * 0.035,
+          lineHeight: 0.95,
+          color: cor,
+          opacity: s,
+          transform: `scale(${0.9 + 0.1 * s})`,
         }}
       >
         {destaque}
       </div>
       {sub ? (
-        <div style={{ fontSize: 32, fontWeight: 800, marginTop: 24, color: "#5B5444", lineHeight: 1.25 }}>{sub}</div>
+        <div style={{ marginTop: 34, fontSize: 46, fontWeight: 800, lineHeight: 1.2, color: tema.secundario, maxWidth: 880, ...entrar(frame, fps, 14) }}>
+          {sub}
+        </div>
       ) : null}
-    </div>
+      {nota ? (
+        <div style={{ marginTop: 40, fontFamily: mono, fontSize: 26, letterSpacing: 1, color: tema.secundario, ...entrar(frame, fps, 20) }}>
+          {nota}
+        </div>
+      ) : null}
+    </AbsoluteFill>
   );
 };

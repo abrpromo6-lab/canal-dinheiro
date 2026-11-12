@@ -18,7 +18,8 @@ const existe = async (caminho: string) => {
 const calcular: CalculateMetadataFunction<EpisodioProps> = async ({ props }) => {
   const { episodio } = props;
   const total = episodio.cenas.reduce((s, c) => s + Math.round(c.duracao * episodio.fps), 0);
-  const lista = await Promise.all(episodio.cenas.map(async (c) => [c.ilustracao, await existe(c.ilustracao)] as const));
+  const caminhos = episodio.cenas.flatMap((c) => (c.ilustracao ? [c.ilustracao] : []));
+  const lista = await Promise.all(caminhos.map(async (p) => [p, await existe(p)] as const));
   return {
     durationInFrames: total,
     fps: episodio.fps,

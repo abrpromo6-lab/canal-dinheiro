@@ -1,53 +1,60 @@
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { cores, fonte } from "../estilo";
+import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { cores, fonte, mono } from "../estilo";
+import { Kicker } from "./Kicker";
+import { entrar, opacidadeCorte } from "./animacao";
 
-const paleta = { verde: cores.verde, vermelho: cores.vermelho, tinta: cores.bege };
-
-/** Palavra-chave gigante que "carimba" na tela. Usa o fim da cena se a fala termina com ela. */
-export const PalavraChave: React.FC<{ texto: string; cor?: "verde" | "vermelho" | "tinta"; atraso?: number }> = ({
+/** Palavra-chave gigante na cor de destaque. Em tela cheia (fundo escuro) ou por cima da ilustração. */
+export const PalavraChave: React.FC<{ texto: string; tela?: boolean; kicker?: string; sub?: string; nota?: string }> = ({
   texto,
-  cor = "vermelho",
-  atraso = 6,
+  tela = false,
+  kicker,
+  sub,
+  nota,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  if (frame < atraso) return null;
-  const s = spring({ frame: frame - atraso, fps, config: { damping: 9, stiffness: 180 } });
-  const tremor = interpolate(frame - atraso, [0, 4, 8, 12], [0, 10, -8, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const tamanho = Math.min(190, Math.floor(1300 / texto.length));
+  const s = spring({ frame: frame - 4, fps, config: { damping: 11, stiffness: 190 } });
+  const tremor = interpolate(frame - 4, [0, 3, 6, 9], [0, 8, -6, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const tamanho = Math.min(200, Math.floor(1500 / texto.length));
+  const sombra = tela ? "none" : "0 8px 40px rgba(0,0,0,0.85)";
 
   return (
-    <div
+    <AbsoluteFill
       style={{
-        position: "absolute",
-        top: 700,
-        left: 0,
-        right: 0,
-        display: "flex",
-        justifyContent: "center",
-        transform: `translateX(${tremor}px) scale(${2.2 - 1.2 * s}) rotate(-4deg)`,
-        opacity: Math.min(1, s * 1.5),
+        backgroundColor: tela ? cores.escuro : "transparent",
+        opacity: tela ? opacidadeCorte(frame) : 1,
+        alignItems: "center",
+        textAlign: "center",
+        paddingTop: tela ? 520 : 760,
+        fontFamily: fonte,
       }}
     >
+      {kicker ? <Kicker cor={cores.cinzaEscuro} style={entrar(frame, fps, 0)}>{kicker}</Kicker> : null}
       <div
         style={{
-          fontFamily: fonte,
-          fontWeight: 900,
+          marginTop: kicker ? 40 : 0,
           fontSize: tamanho,
-          color: cores.branco,
-          background: paleta[cor],
-          padding: "10px 36px 18px",
-          borderRadius: 18,
-          border: `8px solid ${cores.tinta}`,
-          boxShadow: `12px 12px 0 ${cores.tinta}`,
-          letterSpacing: 2,
+          fontWeight: 900,
+          letterSpacing: -tamanho * 0.03,
+          lineHeight: 1,
+          color: cores.destaque,
+          textShadow: sombra,
+          opacity: s,
+          transform: `translateX(${tremor}px) scale(${1.4 - 0.4 * s})`,
         }}
       >
         {texto}
       </div>
-    </div>
+      {sub ? (
+        <div style={{ marginTop: 36, fontSize: 50, fontWeight: 800, lineHeight: 1.2, color: cores.branco, maxWidth: 860, textShadow: sombra, ...entrar(frame, fps, 12) }}>
+          {sub}
+        </div>
+      ) : null}
+      {nota ? (
+        <div style={{ marginTop: 44, fontFamily: mono, fontSize: 26, letterSpacing: 1, color: cores.cinzaEscuro, ...entrar(frame, fps, 18) }}>
+          {nota}
+        </div>
+      ) : null}
+    </AbsoluteFill>
   );
 };

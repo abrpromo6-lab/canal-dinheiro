@@ -14,7 +14,7 @@ const tempos = (cena: Cena, velocidade: number): PalavraTempo[] => {
     .map((texto, i) => ({ texto, inicio: ATRASO + i / velocidade }));
 };
 
-/** Legenda palavra por palavra: mostra grupos de 3, com a palavra falada em destaque. */
+/** Legenda discreta: grupos de até 3 palavras, que vão aparecendo conforme a fala. */
 export const Legenda: React.FC<{ cena: Cena; velocidade: number }> = ({ cena, velocidade }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -27,45 +27,31 @@ export const Legenda: React.FC<{ cena: Cena; velocidade: number }> = ({ cena, ve
   });
   if (atual < 0) return null;
 
-  const inicioGrupo = Math.floor(atual / POR_GRUPO) * POR_GRUPO;
-  const grupo = palavras.slice(inicioGrupo, inicioGrupo + POR_GRUPO);
+  // Grupos de até 3 palavras, sempre recomeçando depois de ponto, interrogação, exclamação ou dois-pontos.
+  let inicioGrupo = 0;
+  for (let i = 1; i <= atual; i++) {
+    if (i - inicioGrupo >= POR_GRUPO || /[.?!:]$/.test(palavras[i - 1].texto)) inicioGrupo = i;
+  }
+  const visiveis = palavras.slice(inicioGrupo, atual + 1);
 
   return (
     <div
       style={{
         position: "absolute",
-        left: 60,
-        right: 60,
-        top: 1380,
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: "0 30px",
-        fontFamily: fonte,
-        fontWeight: 900,
-        fontSize: 78,
-        lineHeight: 1.1,
-        textTransform: "uppercase",
+        left: 80,
+        right: 80,
+        top: 1370,
         textAlign: "center",
+        fontFamily: fonte,
+        fontWeight: 800,
+        fontSize: 64,
+        letterSpacing: -0.5,
+        lineHeight: 1.15,
+        color: cores.branco,
+        textShadow: "0 3px 6px rgba(0,0,0,0.9), 0 0 28px rgba(0,0,0,0.75)",
       }}
     >
-      {grupo.map((p, i) => {
-        const ativa = inicioGrupo + i === atual;
-        return (
-          <span
-            key={inicioGrupo + i}
-            style={{
-              color: ativa ? cores.amarelo : cores.branco,
-              WebkitTextStroke: `10px ${cores.tinta}`,
-              paintOrder: "stroke fill",
-              transform: ativa ? "scale(1.04)" : "none",
-              display: "inline-block",
-            }}
-          >
-            {p.texto}
-          </span>
-        );
-      })}
+      {visiveis.map((p) => p.texto).join(" ")}
     </div>
   );
 };

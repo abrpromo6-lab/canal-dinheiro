@@ -1,87 +1,47 @@
-import { Easing, interpolate } from "remotion";
-import { cores, dinheiro, fonte } from "../estilo";
+import { Easing, interpolate, useCurrentFrame } from "remotion";
+import { cores, dinheiro, fonte, mono } from "../estilo";
 import type { Painel } from "../tipos";
 
-const TRANSICAO = 18; // quadros para os números rolarem entre cenas
+const TRANSICAO = 20; // quadros para os números rolarem no começo da cena
 
-/** Painel fixo no topo: CASH / BANKED / SUSPICION. Anima de `de` para `para` no início da cena. */
-export const PainelDinheiro: React.FC<{ de: Painel; para: Painel; quadroNaCena: number }> = ({
-  de,
-  para,
-  quadroNaCena,
-}) => {
-  const t = interpolate(quadroNaCena, [0, TRANSICAO], [0, 1], {
+/** Painel no topo: três caixas translúcidas (dinheiro em mãos, depositado, calor). */
+export const PainelDinheiro: React.FC<{ de: Painel; para: Painel }> = ({ de, para }) => {
+  const frame = useCurrentFrame();
+  const t = interpolate(frame, [0, TRANSICAO], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.out(Easing.cubic),
   });
   const mix = (a: number, b: number) => a + (b - a) * t;
-  const cash = mix(de.cash, para.cash);
-  const banked = mix(de.banked, para.banked);
-  const suspeita = mix(de.suspicion, para.suspicion);
-  const mudou = (a: number, b: number) => a !== b && t < 1;
-  const pulso = 1 + 0.08 * Math.sin(Math.min(t, 1) * Math.PI);
-
-  const corSuspeita = suspeita < 40 ? cores.verde : suspeita < 75 ? cores.amarelo : cores.vermelho;
-  const bankedTexto = para.rotuloBanked && t > 0.5 ? para.rotuloBanked : dinheiro(banked);
+  const seized = para.rotuloBanked && t > 0.5;
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 70,
-        left: 40,
-        right: 40,
-        height: 200,
-        borderRadius: 28,
-        background: "rgba(18,22,20,0.88)",
-        border: `3px solid rgba(243,233,210,0.18)`,
-        display: "flex",
-        fontFamily: fonte,
-        color: cores.bege,
-        overflow: "hidden",
-      }}
-    >
-      <Coluna rotulo="CASH" escala={mudou(de.cash, para.cash) ? pulso : 1}>
-        <span style={{ color: cores.verde }}>{dinheiro(cash)}</span>
-      </Coluna>
-      <Divisor />
-      <Coluna rotulo="BANKED" escala={mudou(de.banked, para.banked) ? pulso : 1}>
-        <span style={{ color: para.rotuloBanked ? cores.vermelho : cores.bege }}>{bankedTexto}</span>
-      </Coluna>
-      <Divisor />
-      <Coluna rotulo="SUSPICION" escala={mudou(de.suspicion, para.suspicion) ? pulso : 1}>
-        <div style={{ width: "100%", padding: "0 26px" }}>
-          <div style={{ color: corSuspeita }}>{Math.round(suspeita)}%</div>
-          <div style={{ height: 14, borderRadius: 7, background: "rgba(255,255,255,0.12)", marginTop: 8 }}>
-            <div style={{ width: `${suspeita}%`, height: "100%", borderRadius: 7, background: corSuspeita }} />
-          </div>
-        </div>
-      </Coluna>
+    <div style={{ position: "absolute", top: 230, left: 60, right: 60, display: "flex", gap: 18 }}>
+      <Caixa rotulo="ON HAND" valor={dinheiro(mix(de.cash, para.cash))} cor={cores.branco} flex={1.25} />
+      <Caixa
+        rotulo="DEPOSITED"
+        valor={seized ? para.rotuloBanked! : dinheiro(mix(de.banked, para.banked))}
+        cor={seized ? cores.destaque : cores.branco}
+        flex={1}
+      />
+      <Caixa rotulo="HEAT" valor={`${Math.round(mix(de.suspicion, para.suspicion))}%`} cor={cores.destaque} flex={0.85} />
     </div>
   );
 };
 
-const Coluna: React.FC<{ rotulo: string; escala: number; children: React.ReactNode }> = ({
-  rotulo,
-  escala,
-  children,
-}) => (
+const Caixa: React.FC<{ rotulo: string; valor: string; cor: string; flex: number }> = ({ rotulo, valor, cor, flex }) => (
   <div
     style={{
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
+      flex,
+      background: cores.caixa,
+      borderRadius: 18,
+      padding: "20px 24px 22px",
+      border: "1.5px solid rgba(245,241,232,0.08)",
     }}
   >
-    <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 5, color: cores.cinza }}>{rotulo}</div>
-    <div style={{ fontSize: 44, fontWeight: 900, marginTop: 10, transform: `scale(${escala})`, width: "100%" }}>
-      {children}
+    <div style={{ fontFamily: mono, fontSize: 22, letterSpacing: 3, color: cores.cinzaEscuro }}>{rotulo}</div>
+    <div style={{ fontFamily: fonte, fontSize: 50, fontWeight: 900, letterSpacing: -1, marginTop: 6, color: cor, whiteSpace: "nowrap" }}>
+      {valor}
     </div>
   </div>
 );
-
-const Divisor = () => <div style={{ width: 3, margin: "30px 0", background: "rgba(243,233,210,0.15)" }} />;

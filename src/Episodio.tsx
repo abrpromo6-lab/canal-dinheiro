@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import "./estilo";
 import { cores } from "./estilo";
 import { CenaIlustrada } from "./componentes/CenaIlustrada";
@@ -8,27 +8,24 @@ import { CartaoTexto } from "./componentes/CartaoTexto";
 import { GraficoBarras } from "./componentes/GraficoBarras";
 import { PalavraChave } from "./componentes/PalavraChave";
 import { TelaParte2 } from "./componentes/TelaParte2";
-import type { Cena, EpisodioProps, Overlay } from "./tipos";
+import type { EpisodioProps, Overlay } from "./tipos";
 
-const OverlayCena: React.FC<{ overlay?: Overlay; duracao: number; fps: number }> = ({ overlay, duracao, fps }) => {
-  if (!overlay) return null;
+const ConteudoOverlay: React.FC<{ overlay: Overlay }> = ({ overlay }) => {
   switch (overlay.tipo) {
-    case "palavra":
-      return <PalavraChave {...overlay} atraso={overlay.inicio !== undefined ? Math.round(overlay.inicio * fps) : undefined} />;
     case "cartao":
-      return <CartaoTexto {...overlay} atraso={overlay.inicio !== undefined ? Math.round(overlay.inicio * fps) : undefined} />;
+      return <CartaoTexto {...overlay} />;
     case "grafico":
       return <GraficoBarras {...overlay} />;
+    case "palavra":
+      return <PalavraChave {...overlay} />;
     case "parte2":
-      return <TelaParte2 {...overlay} duracao={duracao} />;
+      return <TelaParte2 {...overlay} />;
   }
 };
 
 export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis = {} }) => {
-  const frame = useCurrentFrame();
   const { fps } = episodio;
 
-  // Início de cada cena em quadros
   let acumulado = 0;
   const cenas = episodio.cenas.map((c) => {
     const inicio = acumulado;
@@ -37,25 +34,28 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
     return { ...c, inicio, quadros };
   });
 
-  const indiceAtual = Math.max(0, cenas.findIndex((c) => frame >= c.inicio && frame < c.inicio + c.quadros));
-  const atual = cenas[indiceAtual];
-  const anterior: Cena | undefined = cenas[indiceAtual - 1];
-
   return (
     <AbsoluteFill style={{ backgroundColor: cores.fundo }}>
-      {cenas.map((c) => (
-        <Sequence key={c.id} from={c.inicio} durationInFrames={c.quadros} name={`${c.id} · ${c.descricao}`}>
-          <CenaIlustrada cena={c} disponivel={!!imagensDisponiveis[c.ilustracao]} />
-          <OverlayCena overlay={c.overlay} duracao={c.quadros} fps={fps} />
-          <Legenda cena={c} velocidade={episodio.velocidadeFala} />
-          {c.audio ? <Audio src={staticFile(c.audio)} /> : null}
-        </Sequence>
-      ))}
-      <PainelDinheiro
-        de={anterior?.painel ?? atual.painel}
-        para={atual.painel}
-        quadroNaCena={frame - atual.inicio}
-      />
+      {cenas.map((c, i) => {
+        const atrasoOverlay = Math.round((c.overlay?.inicio ?? 0) * fps);
+        const fimOverlay = c.overlayFim !== undefined ? Math.round(c.overlayFim * fps) : c.quadros;
+        // Na primeira cena o painel conta de zero até o valor inicial (gancho visual).
+        const painelAnterior = i === 0 ? { cash: 0, banked: 0, suspicion: 0 } : cenas[i - 1].painel;
+        return (
+          <Sequence key={c.id} from={c.inicio} durationInFrames={c.quadros} name={`${c.id} · ${c.descricao}`}>
+            {/* Ordem das camadas: ilustração → legenda → painel → overlay (o overlay de tela cheia cobre os outros) */}
+            <CenaIlustrada cena={c} disponivel={!!c.ilustracao && !!imagensDisponiveis[c.ilustracao]} />
+            <Legenda cena={c} velocidade={episodio.velocidadeFala} />
+            <PainelDinheiro de={painelAnterior} para={c.painel} />
+            {c.overlay ? (
+              <Sequence from={atrasoOverlay} durationInFrames={Math.max(1, fimOverlay - atrasoOverlay)} name={`${c.id} · ${c.overlay.tipo}`}>
+                <ConteudoOverlay overlay={c.overlay} />
+              </Sequence>
+            ) : null}
+            {c.audio ? <Audio src={staticFile(c.audio)} /> : null}
+          </Sequence>
+        );
+      })}
     </AbsoluteFill>
   );
 };

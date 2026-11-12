@@ -1,81 +1,61 @@
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { cores, fonte } from "../estilo";
+import { Kicker } from "./Kicker";
+import { entrar, opacidadeCorte } from "./animacao";
 
-/** Tela final da série: chamada para a parte 2 e votação nos comentários. */
-export const TelaParte2: React.FC<{ chamada: string; opcoes: [string, string]; rodape: string; duracao: number }> = ({
-  chamada,
-  opcoes,
-  rodape,
-  duracao,
+/** Tela final da série: chamada para a próxima parte e votação nos comentários. */
+export const TelaParte2: React.FC<{ kicker: string; linha1: string; linha2: string; sub: string[] }> = ({
+  kicker,
+  linha1,
+  linha2,
+  sub,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  // Entra na metade da cena, quando a fala chega em "Do you hide it, or spend it?"
-  const inicio = Math.round(duracao * 0.38);
-  const f = frame - inicio;
-  const fundo = interpolate(f, [0, 10], [0, 0.72], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const sTitulo = spring({ frame: f, fps, config: { damping: 12 } });
-  const sA = spring({ frame: f - 10, fps, config: { damping: 10, stiffness: 150 } });
-  const sB = spring({ frame: f - 16, fps, config: { damping: 10, stiffness: 150 } });
-  const sRodape = spring({ frame: f - 30, fps, config: { damping: 14 } });
-  const pulsar = 1 + 0.04 * Math.sin((f / fps) * Math.PI * 2);
-
-  if (f < 0) return null;
+  const s1 = spring({ frame: frame - 4, fps, config: { damping: 13, stiffness: 160 } });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: `rgba(10,13,12,${fundo})`, fontFamily: fonte, alignItems: "center" }}>
+    <AbsoluteFill
+      style={{
+        backgroundColor: cores.escuro,
+        opacity: opacidadeCorte(frame),
+        alignItems: "center",
+        textAlign: "center",
+        paddingTop: 600,
+        fontFamily: fonte,
+      }}
+    >
+      <Kicker cor={cores.cinzaEscuro} style={entrar(frame, fps, 0)}>{kicker}</Kicker>
       <div
         style={{
-          marginTop: 430,
-          fontSize: 92,
+          marginTop: 40,
+          fontSize: 200,
           fontWeight: 900,
-          color: cores.amarelo,
-          textAlign: "center",
-          lineHeight: 1,
-          transform: `scale(${sTitulo})`,
-          WebkitTextStroke: `8px ${cores.tinta}`,
-          paintOrder: "stroke fill",
+          letterSpacing: -6,
+          lineHeight: 0.95,
+          color: cores.destaque,
+          opacity: s1,
+          transform: `scale(${0.85 + 0.15 * s1})`,
         }}
       >
-        {chamada}
+        {linha1}
       </div>
-      <div style={{ marginTop: 60, fontSize: 48, fontWeight: 800, color: cores.bege }}>Comment one word:</div>
-      <div style={{ display: "flex", gap: 40, marginTop: 36 }}>
-        {[
-          { texto: opcoes[0], cor: cores.verde, s: sA },
-          { texto: opcoes[1], cor: cores.vermelho, s: sB },
-        ].map((o) => (
+      <div style={{ fontSize: 86, fontWeight: 900, letterSpacing: -2, color: cores.branco, ...entrar(frame, fps, 8) }}>{linha2}</div>
+      <div style={{ marginTop: 70, padding: "0 80px" }}>
+        {sub.map((linha, i) => (
           <div
-            key={o.texto}
+            key={i}
             style={{
-              width: 420,
-              padding: "36px 0 44px",
-              textAlign: "center",
-              background: o.cor,
-              color: cores.branco,
-              fontSize: 110,
-              fontWeight: 900,
-              borderRadius: 30,
-              border: `8px solid ${cores.tinta}`,
-              boxShadow: `12px 12px 0 ${cores.tinta}`,
-              transform: `scale(${o.s * pulsar})`,
+              fontSize: 46,
+              fontWeight: 800,
+              lineHeight: 1.3,
+              color: i === 0 ? cores.branco : cores.cinzaEscuro,
+              ...entrar(frame, fps, 16 + i * 8),
             }}
           >
-            {o.texto}
+            {linha}
           </div>
         ))}
-      </div>
-      <div
-        style={{
-          marginTop: 60,
-          fontSize: 50,
-          fontWeight: 900,
-          color: cores.bege,
-          opacity: sRodape,
-          transform: `translateY(${(1 - sRodape) * 40}px)`,
-        }}
-      >
-        {rodape}
       </div>
     </AbsoluteFill>
   );

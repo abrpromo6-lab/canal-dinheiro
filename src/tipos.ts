@@ -1,3 +1,5 @@
+import type { Fundo } from "./estilo";
+
 export type Camera = { zoom: number; x: number; y: number };
 
 export type Painel = {
@@ -9,12 +11,41 @@ export type Painel = {
 
 export type Barra = { rotulo: string; valor: number };
 
+// `inicio`: segundo da cena em que o overlay entra (padrão 0).
+// Cartão, gráfico, palavra com `tela: true` e parte2 cobrem a tela inteira (a ilustração fica por baixo).
 export type Overlay =
-  // inicio: segundo da cena em que o overlay entra (padrão: logo no começo)
-  | { tipo: "palavra"; texto: string; cor?: "verde" | "vermelho" | "tinta"; inicio?: number }
-  | { tipo: "cartao"; titulo: string; destaque: string; sub?: string; inicio?: number }
-  | { tipo: "grafico"; titulo: string; limite: number; rotuloLimite: string; barras: Barra[] }
-  | { tipo: "parte2"; chamada: string; opcoes: [string, string]; rodape: string };
+  | {
+      tipo: "cartao";
+      inicio?: number;
+      fundo?: Fundo;
+      kicker?: string;
+      titulo?: string;
+      destaque: string;
+      corDestaque?: "texto" | "destaque" | "verde";
+      sub?: string;
+      nota?: string;
+    }
+  | {
+      tipo: "grafico";
+      inicio?: number;
+      fundo?: Fundo;
+      kicker?: string;
+      titulo: string;
+      sub?: string;
+      limite: number;
+      rotuloLimite: string;
+      barras: Barra[];
+    }
+  | {
+      tipo: "palavra";
+      inicio?: number;
+      tela?: boolean; // true = fundo escuro em tela cheia; false = por cima da ilustração
+      kicker?: string;
+      texto: string;
+      sub?: string;
+      nota?: string;
+    }
+  | { tipo: "parte2"; inicio?: number; kicker: string; linha1: string; linha2: string; sub: string[] };
 
 /** Tempo de cada palavra (em segundos, relativo ao início da cena). Preencher quando houver o áudio. */
 export type PalavraTempo = { texto: string; inicio: number };
@@ -27,10 +58,13 @@ export type Cena = {
   palavras?: PalavraTempo[];
   /** Opcional: arquivo de áudio da fala em public/ (ex.: "audio/ep01-s01.mp3"). */
   audio?: string;
-  ilustracao: string; // caminho em public/
+  /** Caminho em public/. Cenas só de cartão não têm ilustração. */
+  ilustracao?: string;
   descricao: string;
-  camera: { de: Camera; para: Camera };
+  camera?: { de: Camera; para: Camera };
   painel: Painel;
+  /** Opcional: segundo da cena em que o overlay sai e a ilustração volta. Sem isso, fica até o fim da cena. */
+  overlayFim?: number;
   overlay?: Overlay;
 };
 
