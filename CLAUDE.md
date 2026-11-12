@@ -57,8 +57,15 @@ Não foi possível medir o desempenho do **estilo** da referência (ilustração
 - Ilustrações: o Claude escreve os prompts (com descrição fixa do personagem para manter consistência); o Abr gera e coloca em `public/cenas/`. Enquanto não houver imagem, usar placeholder.
 - Voz: ainda não decidida (sintética). Deixar o tempo de cada fala no JSON para encaixar o áudio depois.
 
+### Estado (2026-11-12)
+
+- Episódio 1 pronto em `src/episodios/ep01.json` (89 s, 12 cenas). Roteiro com fontes em `docs/ep01-roteiro.md`; prompts em `docs/ep01-prompts.md`.
+- Personagem fixo do canal: **Mint** (cabeça verde-menta em forma de tijolo arredondado, moletom mostarda). A descrição está em `docs/ep01-prompts.md`; reutilizar igual em todo episódio.
+- O `calculateMetadata` em `src/Root.tsx` verifica quais imagens existem em `public/cenas/`; as que faltam viram placeholder.
+- Legenda: sem áudio, usa `velocidadeFala`. Com áudio, preencher `audio` e `palavras` (tempos por palavra) em cada cena e ajustar `duracao`.
+
 ### Próximo passo
 
-1. Roteiro do episódio 1 da série "$10M in cash" (cerca de 80 a 90 s), em inglês, com fontes.
-2. Modelo no Remotion com placeholders (composição `Episodio`, 1080×1920, 30 fps).
-3. Lista de prompts das ilustrações para o Abr gerar.
+1. Abr gera as ilustrações e confere os pontos marcados em `docs/ep01-roteiro.md`.
+2. Escolher a voz sintética, gerar o áudio por cena e encaixar os tempos no JSON.
+3. Episódio 2 conforme a votação (HIDE ou SPEND).

@@ -1,0 +1,152 @@
+{
+  "id": "ep01",
+  "serie": "$10M in cash",
+  "titulo": "Part 1: The Bank",
+  "fps": 30,
+  "velocidadeFala": 2.8,
+  "cenas": [
+    {
+      "id": "s01",
+      "duracao": 5.9,
+      "fala": "You just found ten million dollars in cash. One problem: you can't spend a single bill.",
+      "ilustracao": "cenas/ep01-s01.png",
+      "descricao": "Mint opens a closet stuffed with cash bricks",
+      "camera": { "de": { "zoom": 1.25, "x": 0, "y": 60 }, "para": { "zoom": 1.05, "x": 0, "y": 0 } },
+      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "overlay": { "tipo": "palavra", "texto": "$10,000,000", "cor": "verde" }
+    },
+    {
+      "id": "s02",
+      "duracao": 6.2,
+      "fala": "In hundreds, that's one hundred thousand notes. About a hundred kilos of paper in your closet.",
+      "ilustracao": "cenas/ep01-s02.png",
+      "descricao": "Mint tries to lift a duffel bag of cash, bathroom scale nearby",
+      "camera": { "de": { "zoom": 1.05, "x": -40, "y": 0 }, "para": { "zoom": 1.2, "x": 40, "y": -30 } },
+      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "overlay": { "tipo": "cartao", "titulo": "$10M in hundreds", "destaque": "= 100 KG", "sub": "100,000 notes · about 1 gram each" }
+    },
+    {
+      "id": "s03",
+      "duracao": 8.4,
+      "fala": "So you walk into a bank. Bad idea. Deposit more than ten thousand in cash, and the bank reports it to the government.",
+      "ilustracao": "cenas/ep01-s03.png",
+      "descricao": "Mint at a bank counter, teller typing, a form printing in the back",
+      "camera": { "de": { "zoom": 1.1, "x": 60, "y": 0 }, "para": { "zoom": 1.1, "x": -60, "y": 0 } },
+      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "overlay": { "tipo": "cartao", "titulo": "Cash over $10,000", "destaque": "= REPORTED", "sub": "Currency Transaction Report (CTR) to FinCEN" }
+    },
+    {
+      "id": "s04",
+      "duracao": 5.5,
+      "fala": "So you get clever. Nine thousand dollars. Every day. Always just under the line.",
+      "ilustracao": "cenas/ep01-s04.png",
+      "descricao": "Mint counting exactly $9,000 at a kitchen table, smug",
+      "camera": { "de": { "zoom": 1.0, "x": 0, "y": 0 }, "para": { "zoom": 1.15, "x": 0, "y": 40 } },
+      "painel": { "cash": 9991000, "banked": 9000, "suspicion": 5 },
+      "overlay": {
+        "tipo": "grafico",
+        "titulo": "Daily deposits",
+        "limite": 10000,
+        "rotuloLimite": "$10,000 REPORT LINE",
+        "barras": [
+          { "rotulo": "MON", "valor": 9000 },
+          { "rotulo": "TUE", "valor": 9000 },
+          { "rotulo": "WED", "valor": 9000 },
+          { "rotulo": "THU", "valor": 9000 },
+          { "rotulo": "FRI", "valor": 9000 }
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "duracao": 6.2,
+      "fala": "Quick math: that's eleven hundred and twelve deposits. More than three years of daily bank visits.",
+      "ilustracao": "cenas/ep01-s05.png",
+      "descricao": "Wall calendar covered in X marks, Mint exhausted in a bank line",
+      "camera": { "de": { "zoom": 1.2, "x": 0, "y": -40 }, "para": { "zoom": 1.0, "x": 0, "y": 0 } },
+      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 20 },
+      "overlay": { "tipo": "cartao", "titulo": "$10M ÷ $9,000", "destaque": "1,112 DEPOSITS", "sub": "3+ years of bank visits, every single day" }
+    },
+    {
+      "id": "s06",
+      "duracao": 7.3,
+      "fala": "But the bank isn't counting your deposits. It's watching the pattern. Different branches, same day? They add it up.",
+      "ilustracao": "cenas/ep01-s06.png",
+      "descricao": "Back office: analyst at monitors full of identical deposit rows",
+      "camera": { "de": { "zoom": 1.05, "x": 0, "y": 0 }, "para": { "zoom": 1.25, "x": -50, "y": 20 } },
+      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 45 },
+      "overlay": {
+        "tipo": "grafico",
+        "titulo": "One day, three branches",
+        "limite": 10000,
+        "rotuloLimite": "$10,000 REPORT LINE",
+        "barras": [
+          { "rotulo": "BRANCH A", "valor": 4000 },
+          { "rotulo": "BRANCH B", "valor": 3500 },
+          { "rotulo": "BRANCH C", "valor": 3000 },
+          { "rotulo": "SAME DAY", "valor": 10500 }
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "duracao": 4.1,
+      "fala": "Always just under ten thousand? That has a name. Structuring.",
+      "ilustracao": "cenas/ep01-s07.png",
+      "descricao": "Red alert on a screen, Mint's photo pinned in a case file",
+      "camera": { "de": { "zoom": 1.0, "x": 0, "y": 0 }, "para": { "zoom": 1.35, "x": 0, "y": 0 } },
+      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 70 },
+      "overlay": { "tipo": "palavra", "texto": "STRUCTURING", "cor": "vermelho", "inicio": 2.0 }
+    },
+    {
+      "id": "s08",
+      "duracao": 9.4,
+      "fala": "Structuring is a federal crime by itself, even with clean money. Up to five years. Ten, if it tops a hundred grand in a year.",
+      "ilustracao": "cenas/ep01-s08.png",
+      "descricao": "Courtroom: judge's gavel mid-air, Mint small at the defense table",
+      "camera": { "de": { "zoom": 1.15, "x": 0, "y": 50 }, "para": { "zoom": 1.0, "x": 0, "y": 0 } },
+      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 80 },
+      "overlay": { "tipo": "cartao", "titulo": "Structuring = federal crime", "destaque": "UP TO 5 YEARS", "sub": "10 years if over $100k in 12 months · 31 U.S.C. § 5324" }
+    },
+    {
+      "id": "s09",
+      "duracao": 9.4,
+      "fala": "Meanwhile, the bank quietly files a Suspicious Activity Report. By law, they can't tell you. You keep smiling at the teller while the file grows.",
+      "ilustracao": "cenas/ep01-s09.png",
+      "descricao": "Split scene: Mint smiling at the teller; behind the wall, a thick folder",
+      "camera": { "de": { "zoom": 1.1, "x": -60, "y": 0 }, "para": { "zoom": 1.1, "x": 60, "y": 0 } },
+      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 95 },
+      "overlay": { "tipo": "cartao", "titulo": "Suspicious Activity Report", "destaque": "SAR FILED", "sub": "The bank is not allowed to tell you it exists" }
+    },
+    {
+      "id": "s10",
+      "duracao": 9.1,
+      "fala": "A former Speaker of the House got fifteen months in federal prison for this. Not for having the money. For how he moved it.",
+      "ilustracao": "cenas/ep01-s10.png",
+      "descricao": "Symbolic: empty marble government hallway, cell bars shadow on the floor",
+      "camera": { "de": { "zoom": 1.0, "x": 0, "y": -40 }, "para": { "zoom": 1.2, "x": 0, "y": 20 } },
+      "painel": { "cash": 9757000, "banked": 243000, "suspicion": 95 },
+      "overlay": { "tipo": "cartao", "titulo": "Former U.S. House Speaker", "destaque": "15 MONTHS", "sub": "Pleaded guilty to structuring · sentenced in 2016" }
+    },
+    {
+      "id": "s11",
+      "duracao": 4.4,
+      "fala": "And the cash you already deposited? The government can seize it.",
+      "ilustracao": "cenas/ep01-s11.png",
+      "descricao": "Agents carrying evidence boxes out of the bank, Mint watching",
+      "camera": { "de": { "zoom": 1.3, "x": 0, "y": 0 }, "para": { "zoom": 1.05, "x": 0, "y": 0 } },
+      "painel": { "cash": 9757000, "banked": 0, "suspicion": 100, "rotuloBanked": "SEIZED" },
+      "overlay": { "tipo": "palavra", "texto": "SEIZED", "cor": "vermelho", "inicio": 2.3 }
+    },
+    {
+      "id": "s12",
+      "duracao": 13.1,
+      "fala": "So the bank is a trap. Rewind. The ten million is back in your closet. Do you hide it, or spend it? Comment HIDE or SPEND. The majority writes part two.",
+      "ilustracao": "cenas/ep01-s12.png",
+      "descricao": "Mint back at the closet of cash, torn between a shovel and a car key",
+      "camera": { "de": { "zoom": 1.05, "x": 0, "y": 0 }, "para": { "zoom": 1.2, "x": 0, "y": -30 } },
+      "painel": { "cash": 10000000, "banked": 0, "suspicion": 0 },
+      "overlay": { "tipo": "parte2", "chamada": "PART 2 TOMORROW", "opcoes": ["HIDE", "SPEND"], "rodape": "The majority writes Part 2." }
+    }
+  ]
+}
