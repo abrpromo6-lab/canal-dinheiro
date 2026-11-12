@@ -15,9 +15,11 @@ const tempos = (cena: Cena, velocidade: number): PalavraTempo[] => {
 };
 
 /** Legenda discreta: grupos de até 3 palavras, que vão aparecendo conforme a fala. */
-export const Legenda: React.FC<{ cena: Cena; velocidade: number }> = ({ cena, velocidade }) => {
+export const Legenda: React.FC<{ cena: Cena; velocidade: number; ateQuadro?: number }> = ({ cena, velocidade, ateQuadro }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  // Some quando uma palavra-chave grande entra por cima da ilustração (evita texto repetido).
+  if (ateQuadro !== undefined && frame >= ateQuadro) return null;
   const seg = frame / fps;
   const palavras = tempos(cena, velocidade);
 

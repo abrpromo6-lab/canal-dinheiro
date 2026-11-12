@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts Episodio out/episodio.mp4"
+    "render": "remotion render src/index.ts Episodio out/episodio.mp4",
+    "narrar": "node scripts/narrar.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.536",

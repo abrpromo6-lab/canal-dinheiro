@@ -20,9 +20,9 @@
 | s08 | 39,9–41,3 | Structuring. | Tela preta: **STRUCTURING** | 80% |
 | s09 | 41,3–47,8 | A federal crime all by itself, even if every dollar is legal. Up to five years in prison. | Cartão preto **5 years** | 85% |
 | s10 | 47,8–58,0 | Here's the scary part. The bank files a secret report on you, and by law, it can't tell you. You keep smiling at the teller. The file keeps growing. | Ilustração → cartão **Filed.** (2,2–6,4 s) → volta a ilustração | 95% |
-| s11 | 58,0–67,2 | Think that's just for gangsters? A former Speaker of the House got fifteen months for this. Not for the money. For the way he moved it. | Ilustração → cartão bege **15 months** (1,9 s) | 95% |
+| s11 | 58,0–67,2 | Think that's just for gangsters? A former Speaker of the House got fifteen months for this. Not for the money. For the way he moved it. | Ilustração → cartão bege **15 months** (1,9–5,5 s) → volta à ilustração na frase final | 95% |
 | s12 | 67,2–72,0 | And then? They can take it. Every dollar you deposited. Seized. | Ilustração + **SEIZED** (3,4 s) | DEPOSITED vira SEIZED / 100% |
-| s13 | 72,0–83,3 | So the bank is a dead end. Rewind. Ten million, back in your closet. Bury it, or blow it? Comment BURY or BLOW. Most votes decides part two. | Ilustração → tela final **PART 2 drops tomorrow** (4,8 s) | volta a $10,000,000 / $0 / 0% |
+| s13 | 72,0–83,3 | So the bank is a dead end. Rewind. Ten million, back in your closet. Bury it, or blow it? Comment BURY or BLOW. Most votes decides part two. | Ilustração com os balões (buraco × carro) → tela final **PART 2 drops tomorrow** (6,9 s, em "Comment") | volta a $10,000,000 / $0 / 0% |
 
 **Título sugerido:** *You have $10M in cash. You can't spend a dollar. (Part 1)*
 **Descrição:** *Depositing just under $10,000 doesn't hide anything — it's a federal crime called structuring. Part 2: comment BURY or BLOW. Educational content; not legal or financial advice.*

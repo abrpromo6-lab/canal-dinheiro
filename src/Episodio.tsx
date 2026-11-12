@@ -59,7 +59,11 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
           <Sequence key={c.id} from={c.inicio} durationInFrames={c.quadros} name={`${c.id} · ${c.descricao}`}>
             {/* Ordem das camadas: ilustração → legenda → painel → overlay (o overlay de tela cheia cobre os outros) */}
             <CenaIlustrada cena={c} arquivo={c.ilustracao ? imagensDisponiveis[c.ilustracao] ?? null : null} />
-            <Legenda cena={c} velocidade={episodio.velocidadeFala} />
+            <Legenda
+              cena={c}
+              velocidade={episodio.velocidadeFala}
+              ateQuadro={c.overlay?.tipo === "palavra" && !c.overlay.tela ? atrasoOverlay : undefined}
+            />
             <PainelDinheiro de={painelAnterior} para={c.painel} />
             {c.overlay ? (
               <Sequence from={atrasoOverlay} durationInFrames={Math.max(1, fimOverlay - atrasoOverlay)} name={`${c.id} · ${c.overlay.tipo}`}>

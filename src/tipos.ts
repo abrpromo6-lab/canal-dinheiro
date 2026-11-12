@@ -46,6 +46,8 @@ export type Overlay =
       nota?: string;
     }
   | { tipo: "parte2"; inicio?: number; kicker: string; linha1: string; linha2: string; sub: string[] };
+// `ancora` (em qualquer overlay): palavra da fala em que ele entra. O scripts/narrar.mjs
+// converte em `inicio` com o tempo real do áudio.
 
 /** Tempo de cada palavra (em segundos, relativo ao início da cena). Preencher quando houver o áudio. */
 export type PalavraTempo = { texto: string; inicio: number };

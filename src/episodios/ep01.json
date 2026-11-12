@@ -10,10 +10,22 @@
     "impacto": "sons/impacto.mp3",
     "tique": "sons/tique.mp3"
   },
+  "voz": {
+    "nome": "Liam - Viral Short-Form Storyteller (biblioteca)",
+    "id": "VCgLBmBjldJmfphyB8sZ",
+    "modelo": "eleven_v4",
+    "ajustes": {
+      "stability": 0.45,
+      "similarity_boost": 0.8,
+      "style": 0.3,
+      "use_speaker_boost": true,
+      "speed": 1.15
+    }
+  },
   "cenas": [
     {
       "id": "s01",
-      "duracao": 7.2,
+      "duracao": 7.11,
       "fala": "You have ten million dollars in cash. And you can't spend a single bill. Watch what happens when you try.",
       "ilustracao": "cenas/ep01-armario.png",
       "descricao": "Mint's basement apartment: closet bursting with cash bricks",
@@ -39,11 +51,96 @@
         "cash": 10000000,
         "banked": 0,
         "suspicion": 0
-      }
+      },
+      "palavras": [
+        {
+          "texto": "You",
+          "inicio": 0
+        },
+        {
+          "texto": "have",
+          "inicio": 0.28
+        },
+        {
+          "texto": "ten",
+          "inicio": 0.48
+        },
+        {
+          "texto": "million",
+          "inicio": 0.88
+        },
+        {
+          "texto": "dollars",
+          "inicio": 1.36
+        },
+        {
+          "texto": "in",
+          "inicio": 1.76
+        },
+        {
+          "texto": "cash.",
+          "inicio": 2
+        },
+        {
+          "texto": "And",
+          "inicio": 2.92
+        },
+        {
+          "texto": "you",
+          "inicio": 3.04
+        },
+        {
+          "texto": "can't",
+          "inicio": 3.2
+        },
+        {
+          "texto": "spend",
+          "inicio": 3.48
+        },
+        {
+          "texto": "a",
+          "inicio": 3.88
+        },
+        {
+          "texto": "single",
+          "inicio": 4.08
+        },
+        {
+          "texto": "bill.",
+          "inicio": 4.48
+        },
+        {
+          "texto": "Watch",
+          "inicio": 5.32
+        },
+        {
+          "texto": "what",
+          "inicio": 5.52
+        },
+        {
+          "texto": "happens",
+          "inicio": 5.68
+        },
+        {
+          "texto": "when",
+          "inicio": 6
+        },
+        {
+          "texto": "you",
+          "inicio": 6.16
+        },
+        {
+          "texto": "try.",
+          "inicio": 6.4
+        }
+      ],
+      "duracaoFala": 6.96,
+      "audio": "audio/ep01-s01.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|You have ten million dollars in cash. And you can't spend a single bill. Watch what happens when you try."
     },
     {
       "id": "s02",
-      "duracao": 5.5,
+      "duracao": 5.51,
       "fala": "First: it weighs about a hundred kilos. You can't exactly carry it into a store.",
       "ilustracao": "cenas/ep01-peso.png",
       "descricao": "Same apartment: Mint straining to lift a duffel of cash",
@@ -72,29 +169,95 @@
       },
       "overlay": {
         "tipo": "cartao",
-        "inicio": 2.1,
+        "inicio": 2.03,
         "fundo": "bege",
         "kicker": "Problem one: weight",
         "titulo": "100,000 hundred-dollar bills",
         "destaque": "≈ 100 kg",
-        "sub": "About one gram per bill."
-      }
+        "sub": "About one gram per bill.",
+        "ancora": "kilos."
+      },
+      "palavras": [
+        {
+          "texto": "First:",
+          "inicio": 0
+        },
+        {
+          "texto": "it",
+          "inicio": 0.88
+        },
+        {
+          "texto": "weighs",
+          "inicio": 1.08
+        },
+        {
+          "texto": "about",
+          "inicio": 1.28
+        },
+        {
+          "texto": "a",
+          "inicio": 1.52
+        },
+        {
+          "texto": "hundred",
+          "inicio": 1.68
+        },
+        {
+          "texto": "kilos.",
+          "inicio": 2.08
+        },
+        {
+          "texto": "You",
+          "inicio": 2.96
+        },
+        {
+          "texto": "can't",
+          "inicio": 3.08
+        },
+        {
+          "texto": "exactly",
+          "inicio": 3.28
+        },
+        {
+          "texto": "carry",
+          "inicio": 3.76
+        },
+        {
+          "texto": "it",
+          "inicio": 4.04
+        },
+        {
+          "texto": "into",
+          "inicio": 4.16
+        },
+        {
+          "texto": "a",
+          "inicio": 4.4
+        },
+        {
+          "texto": "store.",
+          "inicio": 4.56
+        }
+      ],
+      "duracaoFala": 5.36,
+      "audio": "audio/ep01-s02.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|First: it weighs about a hundred kilos. You can't exactly carry it into a store."
     },
     {
       "id": "s03",
-      "duracao": 7.2,
+      "duracao": 7.91,
       "fala": "So, the bank. Walk in with more than ten grand in cash, and the bank reports you. Automatically. Every time.",
       "ilustracao": "cenas/ep01-banco.png",
       "descricao": "Bank lobby: Mint dumping cash on the teller counter",
       "camera": {
         "de": {
-          "zoom": 1.1,
-          "x": 40,
-          "y": 0
-        },
-        "para": {
           "zoom": 1.15,
           "x": -40,
+          "y": 40
+        },
+        "para": {
+          "zoom": 1.08,
+          "x": 20,
           "y": 0
         }
       },
@@ -103,21 +266,112 @@
         "banked": 0,
         "suspicion": 0
       },
+      "ambiente": "sons/banco.mp3",
+      "legendaTopo": 860,
+      "foco": {
+        "x": 58,
+        "y": 60
+      },
       "overlay": {
         "tipo": "cartao",
-        "inicio": 2.2,
+        "inicio": 2.27,
         "fundo": "bege",
         "kicker": "Problem two: the bank",
         "titulo": "Cash over",
         "destaque": "$10,000",
         "sub": "= a report to the government. Automatically.",
-        "nota": "Currency Transaction Report · 31 CFR § 1010.311"
+        "nota": "Currency Transaction Report · 31 CFR § 1010.311",
+        "ancora": "more"
       },
-      "ambiente": "sons/banco.mp3"
+      "palavras": [
+        {
+          "texto": "So,",
+          "inicio": 0
+        },
+        {
+          "texto": "the",
+          "inicio": 0.72
+        },
+        {
+          "texto": "bank.",
+          "inicio": 1
+        },
+        {
+          "texto": "Walk",
+          "inicio": 1.8
+        },
+        {
+          "texto": "in",
+          "inicio": 2
+        },
+        {
+          "texto": "with",
+          "inicio": 2.16
+        },
+        {
+          "texto": "more",
+          "inicio": 2.32
+        },
+        {
+          "texto": "than",
+          "inicio": 2.48
+        },
+        {
+          "texto": "ten",
+          "inicio": 2.72
+        },
+        {
+          "texto": "grand",
+          "inicio": 2.96
+        },
+        {
+          "texto": "in",
+          "inicio": 3.28
+        },
+        {
+          "texto": "cash,",
+          "inicio": 3.56
+        },
+        {
+          "texto": "and",
+          "inicio": 3.96
+        },
+        {
+          "texto": "the",
+          "inicio": 4.08
+        },
+        {
+          "texto": "bank",
+          "inicio": 4.28
+        },
+        {
+          "texto": "reports",
+          "inicio": 4.64
+        },
+        {
+          "texto": "you.",
+          "inicio": 4.96
+        },
+        {
+          "texto": "Automatically.",
+          "inicio": 5.44
+        },
+        {
+          "texto": "Every",
+          "inicio": 6.56
+        },
+        {
+          "texto": "time.",
+          "inicio": 6.96
+        }
+      ],
+      "duracaoFala": 7.76,
+      "audio": "audio/ep01-s03.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|So, the bank. Walk in with more than ten grand in cash, and the bank reports you. Automatically. Every time."
     },
     {
       "id": "s04",
-      "duracao": 5.2,
+      "duracao": 5.91,
       "fala": "Okay. So you play it smart. Nine thousand. Every day. Never over the line.",
       "descricao": "Gráfico (sem ilustração)",
       "painel": {
@@ -155,11 +409,72 @@
             "valor": 9000
           }
         ]
-      }
+      },
+      "palavras": [
+        {
+          "texto": "Okay.",
+          "inicio": 0
+        },
+        {
+          "texto": "So",
+          "inicio": 0.8
+        },
+        {
+          "texto": "you",
+          "inicio": 0.96
+        },
+        {
+          "texto": "play",
+          "inicio": 1.12
+        },
+        {
+          "texto": "it",
+          "inicio": 1.24
+        },
+        {
+          "texto": "smart.",
+          "inicio": 1.36
+        },
+        {
+          "texto": "Nine",
+          "inicio": 2.28
+        },
+        {
+          "texto": "thousand.",
+          "inicio": 2.48
+        },
+        {
+          "texto": "Every",
+          "inicio": 3.36
+        },
+        {
+          "texto": "day.",
+          "inicio": 3.68
+        },
+        {
+          "texto": "Never",
+          "inicio": 4.4
+        },
+        {
+          "texto": "over",
+          "inicio": 4.72
+        },
+        {
+          "texto": "the",
+          "inicio": 4.96
+        },
+        {
+          "texto": "line.",
+          "inicio": 5.2
+        }
+      ],
+      "duracaoFala": 5.76,
+      "audio": "audio/ep01-s04.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Okay. So you play it smart. Nine thousand. Every day. Never over the line."
     },
     {
       "id": "s05",
-      "duracao": 1.8,
+      "duracao": 2.55,
       "fala": "Easy, right? Wrong.",
       "descricao": "Virada (sem ilustração)",
       "painel": {
@@ -172,11 +487,28 @@
         "tela": true,
         "kicker": "Easy, right?",
         "texto": "WRONG."
-      }
+      },
+      "palavras": [
+        {
+          "texto": "Easy,",
+          "inicio": 0
+        },
+        {
+          "texto": "right?",
+          "inicio": 0.56
+        },
+        {
+          "texto": "Wrong.",
+          "inicio": 1.52
+        }
+      ],
+      "duracaoFala": 2.4,
+      "audio": "audio/ep01-s05.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Easy, right? Wrong."
     },
     {
       "id": "s06",
-      "duracao": 6.2,
+      "duracao": 7.75,
       "fala": "The bank's software isn't counting deposits. It's hunting patterns. Three branches, same day? It adds them up.",
       "ilustracao": "cenas/ep01-analista.png",
       "descricao": "Bank back office: analyst at a wall of monitors, Mint's photo on screen",
@@ -184,12 +516,12 @@
         "de": {
           "zoom": 1.05,
           "x": 0,
-          "y": 0
+          "y": 30
         },
         "para": {
           "zoom": 1.2,
           "x": -40,
-          "y": 20
+          "y": 60
         }
       },
       "painel": {
@@ -197,9 +529,14 @@
         "banked": 243000,
         "suspicion": 45
       },
+      "ambiente": "sons/escritorio-noite.mp3",
+      "foco": {
+        "x": 60,
+        "y": 45
+      },
       "overlay": {
         "tipo": "grafico",
-        "inicio": 3.4,
+        "inicio": 4.47,
         "fundo": "bege",
         "kicker": "Same day · 3 branches",
         "titulo": "It adds them up.",
@@ -222,26 +559,99 @@
             "rotulo": "TOTAL",
             "valor": 10500
           }
-        ]
+        ],
+        "ancora": "Three"
       },
-      "ambiente": "sons/escritorio-noite.mp3"
+      "palavras": [
+        {
+          "texto": "The",
+          "inicio": 0
+        },
+        {
+          "texto": "bank's",
+          "inicio": 0.28
+        },
+        {
+          "texto": "software",
+          "inicio": 0.76
+        },
+        {
+          "texto": "isn't",
+          "inicio": 1.12
+        },
+        {
+          "texto": "counting",
+          "inicio": 1.44
+        },
+        {
+          "texto": "deposits.",
+          "inicio": 1.84
+        },
+        {
+          "texto": "It's",
+          "inicio": 2.773
+        },
+        {
+          "texto": "hunting",
+          "inicio": 2.96
+        },
+        {
+          "texto": "patterns.",
+          "inicio": 3.36
+        },
+        {
+          "texto": "Three",
+          "inicio": 4.52
+        },
+        {
+          "texto": "branches,",
+          "inicio": 4.72
+        },
+        {
+          "texto": "same",
+          "inicio": 5.44
+        },
+        {
+          "texto": "day?",
+          "inicio": 5.76
+        },
+        {
+          "texto": "It",
+          "inicio": 6.4
+        },
+        {
+          "texto": "adds",
+          "inicio": 6.56
+        },
+        {
+          "texto": "them",
+          "inicio": 6.8
+        },
+        {
+          "texto": "up.",
+          "inicio": 6.96
+        }
+      ],
+      "duracaoFala": 7.6,
+      "audio": "audio/ep01-s06.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|The bank's software isn't counting deposits. It's hunting patterns. Three branches, same day? It adds them up."
     },
     {
       "id": "s07",
-      "duracao": 6.8,
+      "duracao": 6.63,
       "fala": "And always just under ten thousand? That's the exact pattern it's trained to catch. It even has a name.",
       "ilustracao": "cenas/ep01-analista.png",
-      "descricao": "Same back office, closer on the monitors",
+      "descricao": "Same back office: zoom on Mint photo linked to three branch pins",
       "camera": {
         "de": {
-          "zoom": 1.35,
-          "x": 60,
-          "y": 80
+          "zoom": 1.5,
+          "x": -260,
+          "y": 235
         },
         "para": {
-          "zoom": 1.6,
-          "x": 80,
-          "y": 120
+          "zoom": 1.8,
+          "x": -311,
+          "y": 304
         }
       },
       "painel": {
@@ -249,20 +659,106 @@
         "banked": 243000,
         "suspicion": 65
       },
+      "ambiente": "sons/escritorio-noite.mp3",
+      "foco": {
+        "x": 50,
+        "y": 45
+      },
       "overlay": {
         "tipo": "cartao",
-        "inicio": 2.2,
+        "inicio": 2.43,
         "fundo": "escuro",
         "kicker": "Always just under $10k",
         "destaque": "Red flag.",
         "corDestaque": "destaque",
-        "sub": "Exactly what the software is built to catch."
+        "sub": "Exactly what the software is built to catch.",
+        "ancora": "That's"
       },
-      "ambiente": "sons/escritorio-noite.mp3"
+      "palavras": [
+        {
+          "texto": "And",
+          "inicio": 0
+        },
+        {
+          "texto": "always",
+          "inicio": 0.32
+        },
+        {
+          "texto": "just",
+          "inicio": 0.8
+        },
+        {
+          "texto": "under",
+          "inicio": 1.16
+        },
+        {
+          "texto": "ten",
+          "inicio": 1.36
+        },
+        {
+          "texto": "thousand?",
+          "inicio": 1.6
+        },
+        {
+          "texto": "That's",
+          "inicio": 2.48
+        },
+        {
+          "texto": "the",
+          "inicio": 2.68
+        },
+        {
+          "texto": "exact",
+          "inicio": 2.8
+        },
+        {
+          "texto": "pattern",
+          "inicio": 3.36
+        },
+        {
+          "texto": "it's",
+          "inicio": 3.72
+        },
+        {
+          "texto": "trained",
+          "inicio": 4.04
+        },
+        {
+          "texto": "to",
+          "inicio": 4.24
+        },
+        {
+          "texto": "catch.",
+          "inicio": 4.52
+        },
+        {
+          "texto": "It",
+          "inicio": 5.16
+        },
+        {
+          "texto": "even",
+          "inicio": 5.28
+        },
+        {
+          "texto": "has",
+          "inicio": 5.52
+        },
+        {
+          "texto": "a",
+          "inicio": 5.64
+        },
+        {
+          "texto": "name.",
+          "inicio": 5.76
+        }
+      ],
+      "duracaoFala": 6.48,
+      "audio": "audio/ep01-s07.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|And always just under ten thousand? That's the exact pattern it's trained to catch. It even has a name."
     },
     {
       "id": "s08",
-      "duracao": 1.4,
+      "duracao": 1.35,
       "fala": "Structuring.",
       "descricao": "Palavra-chave (sem ilustração)",
       "painel": {
@@ -275,11 +771,20 @@
         "tela": true,
         "kicker": "The name",
         "texto": "STRUCTURING"
-      }
+      },
+      "palavras": [
+        {
+          "texto": "Structuring.",
+          "inicio": 0
+        }
+      ],
+      "duracaoFala": 1.2,
+      "audio": "audio/ep01-s08.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Structuring."
     },
     {
       "id": "s09",
-      "duracao": 6.5,
+      "duracao": 7.03,
       "fala": "A federal crime all by itself, even if every dollar is legal. Up to five years in prison.",
       "descricao": "Cartão escuro (sem ilustração)",
       "painel": {
@@ -295,23 +800,100 @@
         "destaque": "5 years",
         "corDestaque": "destaque",
         "sub": "Even if every dollar is legal."
-      }
+      },
+      "palavras": [
+        {
+          "texto": "A",
+          "inicio": 0
+        },
+        {
+          "texto": "federal",
+          "inicio": 0.16
+        },
+        {
+          "texto": "crime",
+          "inicio": 0.56
+        },
+        {
+          "texto": "all",
+          "inicio": 1.04
+        },
+        {
+          "texto": "by",
+          "inicio": 1.28
+        },
+        {
+          "texto": "itself,",
+          "inicio": 1.44
+        },
+        {
+          "texto": "even",
+          "inicio": 2.32
+        },
+        {
+          "texto": "if",
+          "inicio": 2.68
+        },
+        {
+          "texto": "every",
+          "inicio": 2.88
+        },
+        {
+          "texto": "dollar",
+          "inicio": 3.28
+        },
+        {
+          "texto": "is",
+          "inicio": 3.68
+        },
+        {
+          "texto": "legal.",
+          "inicio": 4.2
+        },
+        {
+          "texto": "Up",
+          "inicio": 4.747
+        },
+        {
+          "texto": "to",
+          "inicio": 4.92
+        },
+        {
+          "texto": "five",
+          "inicio": 5.12
+        },
+        {
+          "texto": "years",
+          "inicio": 5.52
+        },
+        {
+          "texto": "in",
+          "inicio": 5.84
+        },
+        {
+          "texto": "prison.",
+          "inicio": 5.96
+        }
+      ],
+      "duracaoFala": 6.88,
+      "audio": "audio/ep01-s09.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|A federal crime all by itself, even if every dollar is legal. Up to five years in prison."
     },
     {
       "id": "s10",
-      "duracao": 10.2,
+      "duracao": 10.23,
       "fala": "Here's the scary part. The bank files a secret report on you, and by law, it can't tell you. You keep smiling at the teller. The file keeps growing.",
       "ilustracao": "cenas/ep01-relatorio.png",
       "descricao": "Cutaway: Mint smiling at the teller; behind the wall, a thick folder",
       "camera": {
         "de": {
-          "zoom": 1.1,
-          "x": -50,
+          "zoom": 1.35,
+          "x": 185,
           "y": 0
         },
         "para": {
-          "zoom": 1.15,
-          "x": 50,
+          "zoom": 1.35,
+          "x": -185,
           "y": 0
         }
       },
@@ -320,35 +902,162 @@
         "banked": 243000,
         "suspicion": 95
       },
-      "overlayFim": 6.4,
+      "overlayFim": 6.27,
+      "ambiente": "sons/banco.mp3",
+      "foco": {
+        "x": 50,
+        "y": 52
+      },
       "overlay": {
         "tipo": "cartao",
-        "inicio": 2.2,
+        "inicio": 2.03,
         "fundo": "escuro",
         "kicker": "Suspicious Activity Report",
         "destaque": "Filed.",
         "corDestaque": "destaque",
         "sub": "And by law, nobody tells you.",
-        "nota": "31 CFR § 1020.320"
+        "nota": "31 CFR § 1020.320",
+        "ancora": "files"
       },
-      "ambiente": "sons/banco.mp3"
+      "overlayFimAncora": "You",
+      "palavras": [
+        {
+          "texto": "Here's",
+          "inicio": 0
+        },
+        {
+          "texto": "the",
+          "inicio": 0.32
+        },
+        {
+          "texto": "scary",
+          "inicio": 0.56
+        },
+        {
+          "texto": "part.",
+          "inicio": 1.04
+        },
+        {
+          "texto": "The",
+          "inicio": 1.68
+        },
+        {
+          "texto": "bank",
+          "inicio": 1.88
+        },
+        {
+          "texto": "files",
+          "inicio": 2.08
+        },
+        {
+          "texto": "a",
+          "inicio": 2.4
+        },
+        {
+          "texto": "secret",
+          "inicio": 2.64
+        },
+        {
+          "texto": "report",
+          "inicio": 3.16
+        },
+        {
+          "texto": "on",
+          "inicio": 3.44
+        },
+        {
+          "texto": "you,",
+          "inicio": 3.76
+        },
+        {
+          "texto": "and",
+          "inicio": 4.027
+        },
+        {
+          "texto": "by",
+          "inicio": 4.2
+        },
+        {
+          "texto": "law,",
+          "inicio": 4.56
+        },
+        {
+          "texto": "it",
+          "inicio": 4.96
+        },
+        {
+          "texto": "can't",
+          "inicio": 5.12
+        },
+        {
+          "texto": "tell",
+          "inicio": 5.44
+        },
+        {
+          "texto": "you.",
+          "inicio": 5.68
+        },
+        {
+          "texto": "You",
+          "inicio": 6.32
+        },
+        {
+          "texto": "keep",
+          "inicio": 6.48
+        },
+        {
+          "texto": "smiling",
+          "inicio": 6.8
+        },
+        {
+          "texto": "at",
+          "inicio": 7.16
+        },
+        {
+          "texto": "the",
+          "inicio": 7.28
+        },
+        {
+          "texto": "teller.",
+          "inicio": 7.4
+        },
+        {
+          "texto": "The",
+          "inicio": 8.16
+        },
+        {
+          "texto": "file",
+          "inicio": 8.48
+        },
+        {
+          "texto": "keeps",
+          "inicio": 8.72
+        },
+        {
+          "texto": "growing.",
+          "inicio": 9.08
+        }
+      ],
+      "duracaoFala": 10.08,
+      "audio": "audio/ep01-s10.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Here's the scary part. The bank files a secret report on you, and by law, it can't tell you. You keep smiling at the teller. The file keeps growing."
     },
     {
       "id": "s11",
-      "duracao": 9.2,
+      "duracao": 8.39,
       "fala": "Think that's just for gangsters? A former Speaker of the House got fifteen months for this. Not for the money. For the way he moved it.",
       "ilustracao": "cenas/ep01-corredor.png",
       "descricao": "Symbolic: empty marble hallway, cell-bar shadows on the floor",
       "camera": {
         "de": {
-          "zoom": 1,
+          "zoom": 1.05,
           "x": 0,
-          "y": -30
+          "y": 0
         },
         "para": {
-          "zoom": 1.15,
-          "x": 0,
-          "y": 20
+          "zoom": 1.3,
+          "x": 150,
+          "y": -280
         }
       },
       "painel": {
@@ -356,28 +1065,145 @@
         "banked": 243000,
         "suspicion": 95
       },
+      "ambiente": "sons/corredor.mp3",
+      "foco": {
+        "x": 50,
+        "y": 62
+      },
+      "overlayFim": 5.47,
+      "legendaTopo": 980,
       "overlay": {
         "tipo": "cartao",
-        "inicio": 1.9,
+        "inicio": 1.87,
         "fundo": "bege",
         "kicker": "Real case · 2016",
         "titulo": "Former U.S. House Speaker",
         "destaque": "15 months",
-        "sub": "Not for the money. For the way he moved it."
+        "sub": "Pleaded guilty to structuring.",
+        "ancora": "A"
       },
-      "ambiente": "sons/corredor.mp3"
+      "overlayFimAncora": "Not",
+      "palavras": [
+        {
+          "texto": "Think",
+          "inicio": 0
+        },
+        {
+          "texto": "that's",
+          "inicio": 0.32
+        },
+        {
+          "texto": "just",
+          "inicio": 0.56
+        },
+        {
+          "texto": "for",
+          "inicio": 0.72
+        },
+        {
+          "texto": "gangsters?",
+          "inicio": 0.88
+        },
+        {
+          "texto": "A",
+          "inicio": 1.92
+        },
+        {
+          "texto": "former",
+          "inicio": 2.16
+        },
+        {
+          "texto": "Speaker",
+          "inicio": 2.4
+        },
+        {
+          "texto": "of",
+          "inicio": 2.8
+        },
+        {
+          "texto": "the",
+          "inicio": 2.92
+        },
+        {
+          "texto": "House",
+          "inicio": 3.04
+        },
+        {
+          "texto": "got",
+          "inicio": 3.36
+        },
+        {
+          "texto": "fifteen",
+          "inicio": 3.68
+        },
+        {
+          "texto": "months",
+          "inicio": 4.32
+        },
+        {
+          "texto": "for",
+          "inicio": 4.64
+        },
+        {
+          "texto": "this.",
+          "inicio": 4.8
+        },
+        {
+          "texto": "Not",
+          "inicio": 5.52
+        },
+        {
+          "texto": "for",
+          "inicio": 5.72
+        },
+        {
+          "texto": "the",
+          "inicio": 5.84
+        },
+        {
+          "texto": "money.",
+          "inicio": 6.24
+        },
+        {
+          "texto": "For",
+          "inicio": 6.64
+        },
+        {
+          "texto": "the",
+          "inicio": 6.8
+        },
+        {
+          "texto": "way",
+          "inicio": 6.96
+        },
+        {
+          "texto": "he",
+          "inicio": 7.12
+        },
+        {
+          "texto": "moved",
+          "inicio": 7.36
+        },
+        {
+          "texto": "it.",
+          "inicio": 7.68
+        }
+      ],
+      "duracaoFala": 8.24,
+      "audio": "audio/ep01-s11.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Think that's just for gangsters? A former Speaker of the House got fifteen months for this. Not for the money. For the way he moved it."
     },
     {
       "id": "s12",
-      "duracao": 4.8,
+      "duracao": 5.03,
       "fala": "And then? They can take it. Every dollar you deposited. Seized.",
       "ilustracao": "cenas/ep01-apreensao.png",
       "descricao": "Outside the bank at dusk: agents loading evidence boxes, Mint in shock",
       "camera": {
         "de": {
-          "zoom": 1.3,
-          "x": 0,
-          "y": 0
+          "zoom": 1.35,
+          "x": 180,
+          "y": -150
         },
         "para": {
           "zoom": 1.05,
@@ -391,29 +1217,84 @@
         "suspicion": 100,
         "rotuloBanked": "SEIZED"
       },
+      "ambiente": "sons/rua-sirene.mp3",
+      "legendaTopo": 1000,
+      "foco": {
+        "x": 40,
+        "y": 60
+      },
       "overlay": {
         "tipo": "palavra",
-        "inicio": 3.4,
-        "texto": "SEIZED"
+        "inicio": 3.95,
+        "texto": "SEIZED",
+        "ancora": "Seized."
       },
-      "ambiente": "sons/rua-sirene.mp3"
+      "palavras": [
+        {
+          "texto": "And",
+          "inicio": 0
+        },
+        {
+          "texto": "then?",
+          "inicio": 0.16
+        },
+        {
+          "texto": "They",
+          "inicio": 0.907
+        },
+        {
+          "texto": "can",
+          "inicio": 1.04
+        },
+        {
+          "texto": "take",
+          "inicio": 1.2
+        },
+        {
+          "texto": "it.",
+          "inicio": 1.44
+        },
+        {
+          "texto": "Every",
+          "inicio": 2
+        },
+        {
+          "texto": "dollar",
+          "inicio": 2.44
+        },
+        {
+          "texto": "you",
+          "inicio": 2.8
+        },
+        {
+          "texto": "deposited.",
+          "inicio": 2.96
+        },
+        {
+          "texto": "Seized.",
+          "inicio": 4
+        }
+      ],
+      "duracaoFala": 4.88,
+      "audio": "audio/ep01-s12.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|And then? They can take it. Every dollar you deposited. Seized."
     },
     {
       "id": "s13",
-      "duracao": 11.3,
+      "duracao": 12.52,
       "fala": "So the bank is a dead end. Rewind. Ten million, back in your closet. Bury it, or blow it? Comment BURY or BLOW. Most votes decides part two.",
       "ilustracao": "cenas/ep01-dilema.png",
       "descricao": "Mint's apartment again: torn between a shovel and a car key",
       "camera": {
         "de": {
-          "zoom": 1.05,
+          "zoom": 1.35,
           "x": 0,
-          "y": 0
+          "y": 100
         },
         "para": {
-          "zoom": 1.15,
+          "zoom": 1.08,
           "x": 0,
-          "y": -20
+          "y": 60
         }
       },
       "painel": {
@@ -421,18 +1302,140 @@
         "banked": 0,
         "suspicion": 0
       },
+      "ambiente": "sons/chuva-porao.mp3",
+      "foco": {
+        "x": 50,
+        "y": 48
+      },
       "overlay": {
         "tipo": "parte2",
-        "inicio": 4.8,
+        "inicio": 6.75,
         "kicker": "The bank is a dead end",
         "linha1": "PART 2",
         "linha2": "drops tomorrow.",
         "sub": [
           "Bury it or blow it?",
           "Comment BURY or BLOW. Most votes wins."
-        ]
+        ],
+        "ancora": "Comment"
       },
-      "ambiente": "sons/chuva-porao.mp3"
+      "palavras": [
+        {
+          "texto": "So",
+          "inicio": 0
+        },
+        {
+          "texto": "the",
+          "inicio": 0.24
+        },
+        {
+          "texto": "bank",
+          "inicio": 0.4
+        },
+        {
+          "texto": "is",
+          "inicio": 0.72
+        },
+        {
+          "texto": "a",
+          "inicio": 0.88
+        },
+        {
+          "texto": "dead",
+          "inicio": 1.04
+        },
+        {
+          "texto": "end.",
+          "inicio": 1.28
+        },
+        {
+          "texto": "Rewind.",
+          "inicio": 2.04
+        },
+        {
+          "texto": "Ten",
+          "inicio": 2.96
+        },
+        {
+          "texto": "million,",
+          "inicio": 3.2
+        },
+        {
+          "texto": "back",
+          "inicio": 3.84
+        },
+        {
+          "texto": "in",
+          "inicio": 4
+        },
+        {
+          "texto": "your",
+          "inicio": 4.12
+        },
+        {
+          "texto": "closet.",
+          "inicio": 4.24
+        },
+        {
+          "texto": "Bury",
+          "inicio": 5.12
+        },
+        {
+          "texto": "it,",
+          "inicio": 5.44
+        },
+        {
+          "texto": "or",
+          "inicio": 5.867
+        },
+        {
+          "texto": "blow",
+          "inicio": 6
+        },
+        {
+          "texto": "it?",
+          "inicio": 6.24
+        },
+        {
+          "texto": "Comment",
+          "inicio": 6.8
+        },
+        {
+          "texto": "BURY",
+          "inicio": 7.28
+        },
+        {
+          "texto": "or",
+          "inicio": 7.76
+        },
+        {
+          "texto": "BLOW.",
+          "inicio": 7.92
+        },
+        {
+          "texto": "Most",
+          "inicio": 8.72
+        },
+        {
+          "texto": "votes",
+          "inicio": 9.04
+        },
+        {
+          "texto": "decides",
+          "inicio": 9.36
+        },
+        {
+          "texto": "part",
+          "inicio": 9.84
+        },
+        {
+          "texto": "two.",
+          "inicio": 10.2
+        }
+      ],
+      "duracaoFala": 10.72,
+      "audio": "audio/ep01-s13.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|So the bank is a dead end. Rewind. Ten million, back in your closet. Bury it, or blow it? Comment BURY or BLOW. Most votes decides part two."
     }
   ]
 }
