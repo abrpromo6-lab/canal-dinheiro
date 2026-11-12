@@ -1,5 +1,7 @@
-import { CalculateMetadataFunction, Composition, staticFile } from "remotion";
+import { CalculateMetadataFunction, Composition, staticFile, Still } from "remotion";
 import { Episodio } from "./Episodio";
+import { Capa, type CapaProps } from "./Capa";
+import { Perfil } from "./Perfil";
 import ep01 from "./episodios/ep01.json";
 import type { Episodio as EpisodioTipo, EpisodioProps } from "./tipos";
 
@@ -45,6 +47,21 @@ const calcular: CalculateMetadataFunction<EpisodioProps> = async ({ props }) => 
 };
 
 export const Root: React.FC = () => (
+  <>
+  <Still id="Perfil" component={Perfil} width={800} height={800} />
+  <Still
+    id="Capa"
+    component={Capa}
+    width={1080}
+    height={1920}
+    defaultProps={{
+      imagem: "cenas/ep01-armario.webp",
+      kicker: "YOU HAVE",
+      linha1: "$10M",
+      linha2: "IN CASH",
+      selo: "YOU CAN'T SPEND IT",
+    } as CapaProps}
+  />
   <Composition
     id="Episodio"
     component={Episodio}
@@ -55,4 +72,5 @@ export const Root: React.FC = () => (
     defaultProps={{ episodio: episodioPadrao } as EpisodioProps}
     calculateMetadata={calcular}
   />
+  </>
 );

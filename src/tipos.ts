@@ -60,6 +60,8 @@ export type Cena = {
   palavras?: PalavraTempo[];
   /** Opcional: arquivo de áudio da fala em public/ (ex.: "audio/ep01-s01.mp3"). */
   audio?: string;
+  /** Preenchido pelo scripts/narrar.mjs: duração real da fala em segundos. */
+  duracaoFala?: number;
   /** Caminho em public/. Cenas só de cartão não têm ilustração. */
   ilustracao?: string;
   descricao: string;

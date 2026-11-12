@@ -4,17 +4,19 @@ import { Kicker } from "./Kicker";
 import { entrar, opacidadeCorte } from "./animacao";
 
 /** Palavra-chave gigante na cor de destaque. Em tela cheia (fundo escuro) ou por cima da ilustração. */
-export const PalavraChave: React.FC<{ texto: string; tela?: boolean; kicker?: string; sub?: string; nota?: string }> = ({
-  texto,
-  tela = false,
-  kicker,
-  sub,
-  nota,
-}) => {
+export const PalavraChave: React.FC<{
+  texto: string;
+  tela?: boolean;
+  kicker?: string;
+  sub?: string;
+  nota?: string;
+  /** Quadro (dentro do overlay) em que a palavra grande "carimba" — o momento em que ela é falada. */
+  atrasoTexto?: number;
+}> = ({ texto, tela = false, kicker, sub, nota, atrasoTexto = 4 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const s = spring({ frame: frame - 4, fps, config: { damping: 11, stiffness: 190 } });
-  const tremor = interpolate(frame - 4, [0, 3, 6, 9], [0, 8, -6, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const s = spring({ frame: frame - atrasoTexto, fps, config: { damping: 11, stiffness: 190 } });
+  const tremor = interpolate(frame - atrasoTexto, [0, 3, 6, 9], [0, 8, -6, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const tamanho = Math.min(200, Math.floor(1500 / texto.length));
   const sombra = tela ? "none" : "0 8px 40px rgba(0,0,0,0.85)";
 

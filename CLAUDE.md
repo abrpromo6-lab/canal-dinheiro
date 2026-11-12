@@ -67,9 +67,12 @@ Não foi possível medir o desempenho do **estilo** da referência (ilustração
 - **Narração (ElevenLabs):** `npm run narrar` lê `ep.voz` no JSON, gera `public/audio/<ep>-<cena>.mp3`, grava `palavras` (tempo de cada palavra), `duracao` de cada cena e converte `overlay.ancora` / `overlayFimAncora` (palavra da fala) em `inicio` / `overlayFim`. Só refaz cenas cuja fala ou voz mudou (`--forcar` refaz tudo; `--so=s03` uma cena; `--vozes` lista as vozes).
   - Voz do canal: **Liam – Viral Short-Form Storyteller** (`VCgLBmBjldJmfphyB8sZ`, biblioteca), modelo `eleven_v4`. O v4 praticamente ignora `speed`; para encurtar, enxugar o texto.
   - Chave em `.env` (`ELEVENLABS_API_KEY`, fora do Git). O script dá prioridade ao `.env` porque o Windows do Abr tinha uma `ELEVENLABS_API_KEY` antiga no sistema. Plano Starter: saída `mp3_44100_128` (192 kbps só no Creator); a chave não tem permissão de adicionar vozes, mas usa vozes da biblioteca direto pelo ID.
-- Sons opcionais em `public/sons/` (lista em `docs/sons.md`); o que faltar é ignorado.
+- **Sons (ElevenLabs):** `npm run sons` gera música e efeitos em `public/sons/` (prompts em `scripts/sons.mjs`); `node scripts/normalizar.mjs` iguala o volume dos ambientes e grava `.wav` (o JSON aponta para os `.wav`). Níveis e ducking (música/ambiente abaixam sob a voz) em `src/mixagem.ts`. O Abr pediu whoosh suave e limpo; nada pode ficar na frente da voz.
+- **Capa e perfil:** composições `Capa` (1080×1920) e `Perfil` (800×800) em `src/Root.tsx`; `npx remotion still src/index.ts Capa out/capa-ep01.png`. Título, descrição, tags e comentário fixado em `docs/ep01-publicacao.md`.
+- Canal sugerido: **Mint Files** (@mintfiles), postar o mesmo vídeo em Shorts, TikTok e Reels, um por dia.
+- Render no Windows desta máquina: o Chrome do Remotion falhava pelo caminho longo; usar `--browser-executable` apontando para uma cópia em caminho curto, se acontecer de novo.
 
 ### Próximo passo
 
-1. Abr baixa música e efeitos (`docs/sons.md`) e confere os pontos marcados em `docs/ep01-roteiro.md` antes de publicar.
+1. Abr ouve o episódio, confere os pontos marcados em `docs/ep01-roteiro.md` e publica.
 2. Episódio 2 conforme a votação (BURY ou BLOW).

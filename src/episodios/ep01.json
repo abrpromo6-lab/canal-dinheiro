@@ -34,7 +34,7 @@
         "x": 62,
         "y": 52
       },
-      "ambiente": "sons/chuva-porao.mp3",
+      "ambiente": "sons/chuva-porao.wav",
       "camera": {
         "de": {
           "zoom": 1.3,
@@ -161,7 +161,7 @@
         "banked": 0,
         "suspicion": 0
       },
-      "ambiente": "sons/chuva-porao.mp3",
+      "ambiente": "sons/chuva-porao.wav",
       "legendaTopo": 1000,
       "foco": {
         "x": 48,
@@ -266,7 +266,7 @@
         "banked": 0,
         "suspicion": 0
       },
-      "ambiente": "sons/banco.mp3",
+      "ambiente": "sons/banco.wav",
       "legendaTopo": 860,
       "foco": {
         "x": 58,
@@ -529,7 +529,7 @@
         "banked": 243000,
         "suspicion": 45
       },
-      "ambiente": "sons/escritorio-noite.mp3",
+      "ambiente": "sons/escritorio-noite.wav",
       "foco": {
         "x": 60,
         "y": 45
@@ -659,7 +659,7 @@
         "banked": 243000,
         "suspicion": 65
       },
-      "ambiente": "sons/escritorio-noite.mp3",
+      "ambiente": "sons/escritorio-noite.wav",
       "foco": {
         "x": 50,
         "y": 45
@@ -903,7 +903,7 @@
         "suspicion": 95
       },
       "overlayFim": 6.27,
-      "ambiente": "sons/banco.mp3",
+      "ambiente": "sons/banco.wav",
       "foco": {
         "x": 50,
         "y": 52
@@ -1065,7 +1065,7 @@
         "banked": 243000,
         "suspicion": 95
       },
-      "ambiente": "sons/corredor.mp3",
+      "ambiente": "sons/corredor.wav",
       "foco": {
         "x": 50,
         "y": 62
@@ -1217,7 +1217,7 @@
         "suspicion": 100,
         "rotuloBanked": "SEIZED"
       },
-      "ambiente": "sons/rua-sirene.mp3",
+      "ambiente": "sons/rua-sirene.wav",
       "legendaTopo": 1000,
       "foco": {
         "x": 40,
@@ -1302,7 +1302,7 @@
         "banked": 0,
         "suspicion": 0
       },
-      "ambiente": "sons/chuva-porao.mp3",
+      "ambiente": "sons/chuva-porao.wav",
       "foco": {
         "x": 50,
         "y": 48
