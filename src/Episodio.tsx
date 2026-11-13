@@ -61,7 +61,7 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
         const atrasoOverlay = Math.round((c.overlay?.inicio ?? 0) * fps);
         const fimOverlay = c.overlayFim !== undefined ? Math.round(c.overlayFim * fps) : c.quadros;
         // Na primeira cena o painel conta de zero até o valor inicial (gancho visual).
-        const painelAnterior = i === 0 ? { cash: 0, banked: 0, suspicion: 0 } : cenas[i - 1].painel;
+        const painelAnterior = i === 0 ? c.painel : cenas[i - 1].painel; // 1º quadro já mostra o dinheiro
         // Palavra-chave: carimba (e o impacto toca) no momento em que a palavra é falada.
         const segPalavra = c.overlay?.tipo === "palavra" ? momentoDaPalavra(c.palavras, c.overlay.texto) : undefined;
         const quadroPalavra = segPalavra !== undefined ? Math.max(atrasoOverlay, Math.round(segPalavra * fps)) : atrasoOverlay + 4;
@@ -77,7 +77,8 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
             <PainelDinheiro de={painelAnterior} para={c.painel} />
             {c.overlay ? (
               <Sequence from={atrasoOverlay} durationInFrames={Math.max(1, fimOverlay - atrasoOverlay)} name={`${c.id} · ${c.overlay.tipo}`}>
-                <ConteudoOverlay overlay={c.overlay} atrasoTexto={quadroPalavra - atrasoOverlay} />
+                {/* Na 1ª cena a palavra já está na tela no quadro 0 (é a "capa" que aparece no feed) */}
+                <ConteudoOverlay overlay={c.overlay} atrasoTexto={i === 0 ? -20 : quadroPalavra - atrasoOverlay} />
               </Sequence>
             ) : null}
             {c.audio ? <Audio src={staticFile(c.audio)} volume={NIVEIS.voz} /> : null}

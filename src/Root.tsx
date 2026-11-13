@@ -3,6 +3,7 @@ import { Episodio } from "./Episodio";
 import { Capa, type CapaProps } from "./Capa";
 import { Perfil } from "./Perfil";
 import ep01 from "./episodios/ep01.json";
+import ep02 from "./episodios/ep02.json";
 import type { Episodio as EpisodioTipo, EpisodioProps } from "./tipos";
 
 const episodioPadrao = ep01 as EpisodioTipo;
@@ -70,6 +71,16 @@ export const Root: React.FC = () => (
     fps={30}
     durationInFrames={30 * 90}
     defaultProps={{ episodio: episodioPadrao } as EpisodioProps}
+    calculateMetadata={calcular}
+  />
+  <Composition
+    id="ep02"
+    component={Episodio}
+    width={1080}
+    height={1920}
+    fps={30}
+    durationInFrames={30 * 60}
+    defaultProps={{ episodio: ep02 as EpisodioTipo } as EpisodioProps}
     calculateMetadata={calcular}
   />
   </>

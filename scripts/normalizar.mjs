@@ -3,7 +3,9 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync, unlinkSync } from "node:fs";
 
-const AMBIENTES = ["chuva-porao", "banco", "escritorio-noite", "corredor", "rua-sirene"];
+const AMBIENTES = process.argv.slice(2).length
+  ? process.argv.slice(2)
+  : ["chuva-porao", "banco", "escritorio-noite", "corredor", "rua-sirene", "quintal-noite", "aeroporto"];
 const ALVO_DB = -20; // RMS alvo
 const TETO = 0.89; // pico máximo (-1 dB)
 

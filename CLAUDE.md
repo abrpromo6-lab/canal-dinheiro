@@ -72,7 +72,14 @@ Não foi possível medir o desempenho do **estilo** da referência (ilustração
 - Canal sugerido: **Mint Files** (@mintfiles), postar o mesmo vídeo em Shorts, TikTok e Reels, um por dia.
 - Render no Windows desta máquina: o Chrome do Remotion falhava pelo caminho longo; usar `--browser-executable` apontando para uma cópia em caminho curto, se acontecer de novo.
 
+### Resultados e lições (2026-11-13)
+
+- Ep01 (88 s), primeiras ~11 h: **YouTube** 552 views, ~55 s de tempo médio, 10 curtidas, 2 inscritos, 1 voto (BURY). **Instagram** 173 views, 25 s médios, **49% pularam no início**. **TikTok** 91 views, 4 s médios: a conta foi distribuída para o Brasil (região da conta/celular), não para público de inglês.
+- Lição: o 1º quadro mostrava o painel em "$0" (contava do zero). Agora a 1ª cena começa com o painel cheio e, no ep02, com o título já na tela no quadro 0. Mirar 55–65 s.
+- Ep02 "You Buried It" pronto: `src/episodios/ep02.json` (65 s, 9 cenas, 7 ilustrações), composição `ep02` (`npm run render:ep02`), roteiro/fontes/publicação em `docs/ep02-roteiro.md`, prompts em `docs/ep02-prompts.md`. Capa: `npx remotion still src/index.ts Capa out/capa-ep02.png --props=...` (usar imagem em que o rosto do Mint fique abaixo do título).
+- Fluxo por episódio: JSON → `node scripts/narrar.mjs src/episodios/epXX.json` → prompts → Abr gera imagens → ajustar `foco`/`legendaTopo`/`camera` por cena → render. Novos ambientes: adicionar em `scripts/sons.mjs`, `node scripts/sons.mjs`, `node scripts/normalizar.mjs <nome>`.
+
 ### Próximo passo
 
-1. Abr ouve o episódio, confere os pontos marcados em `docs/ep01-roteiro.md` e publica.
-2. Episódio 2 conforme a votação (BURY ou BLOW).
+1. Abr publica o ep02 e fixa o comentário "CASINO or CAR?".
+2. Episódio 3 conforme a votação (CASINO ou CAR).

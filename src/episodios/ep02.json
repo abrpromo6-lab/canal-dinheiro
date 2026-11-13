@@ -1,0 +1,1045 @@
+{
+  "id": "ep02",
+  "serie": "$10M in cash",
+  "titulo": "Part 2: You Buried It",
+  "fps": 30,
+  "velocidadeFala": 2.7,
+  "sons": {
+    "musica": "sons/musica-tensa.mp3",
+    "corte": "sons/whoosh.mp3",
+    "impacto": "sons/impacto.mp3",
+    "tique": "sons/tique.mp3"
+  },
+  "voz": {
+    "nome": "Liam - Viral Short-Form Storyteller (biblioteca)",
+    "id": "VCgLBmBjldJmfphyB8sZ",
+    "modelo": "eleven_v4",
+    "ajustes": {
+      "stability": 0.45,
+      "similarity_boost": 0.8,
+      "style": 0.3,
+      "use_speaker_boost": true,
+      "speed": 1.15
+    }
+  },
+  "cenas": [
+    {
+      "id": "s01",
+      "duracao": 7.03,
+      "fala": "Part two. You buried ten million dollars in the backyard. No bank. No reports. Perfect, right?",
+      "ilustracao": "cenas/ep02-cavando.png",
+      "descricao": "Night backyard: Mint burying duffel bags of cash by flashlight",
+      "ambiente": "sons/quintal-noite.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.25,
+          "x": 0,
+          "y": 60
+        },
+        "para": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "palavras": [
+        {
+          "texto": "Part",
+          "inicio": 0
+        },
+        {
+          "texto": "two.",
+          "inicio": 0.32
+        },
+        {
+          "texto": "You",
+          "inicio": 1.12
+        },
+        {
+          "texto": "buried",
+          "inicio": 1.28
+        },
+        {
+          "texto": "ten",
+          "inicio": 1.72
+        },
+        {
+          "texto": "million",
+          "inicio": 2
+        },
+        {
+          "texto": "dollars",
+          "inicio": 2.4
+        },
+        {
+          "texto": "in",
+          "inicio": 2.76
+        },
+        {
+          "texto": "the",
+          "inicio": 2.88
+        },
+        {
+          "texto": "backyard.",
+          "inicio": 2.96
+        },
+        {
+          "texto": "No",
+          "inicio": 4
+        },
+        {
+          "texto": "bank.",
+          "inicio": 4.16
+        },
+        {
+          "texto": "No",
+          "inicio": 4.84
+        },
+        {
+          "texto": "reports.",
+          "inicio": 4.96
+        },
+        {
+          "texto": "Perfect,",
+          "inicio": 5.84
+        },
+        {
+          "texto": "right?",
+          "inicio": 6.48
+        }
+      ],
+      "duracaoFala": 6.88,
+      "audio": "audio/ep02-s01.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Part two. You buried ten million dollars in the backyard. No bank. No reports. Perfect, right?",
+      "foco": {
+        "x": 45,
+        "y": 66
+      },
+      "overlay": {
+        "tipo": "palavra",
+        "inicio": 0,
+        "kicker": "Part 2",
+        "texto": "YOU BURIED IT"
+      }
+    },
+    {
+      "id": "s02",
+      "duracao": 6.87,
+      "fala": "Here's the problem. Dirt is wet. Paper money rots. And mold doesn't care how rich you are.",
+      "ilustracao": "cenas/ep02-subsolo.png",
+      "descricao": "Underground cross-section: damp cash bags, roots, water, a rat",
+      "ambiente": "sons/quintal-noite.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": -40
+        },
+        "para": {
+          "zoom": 1.25,
+          "x": 0,
+          "y": 60
+        }
+      },
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "palavras": [
+        {
+          "texto": "Here's",
+          "inicio": 0
+        },
+        {
+          "texto": "the",
+          "inicio": 0.32
+        },
+        {
+          "texto": "problem.",
+          "inicio": 0.84
+        },
+        {
+          "texto": "Dirt",
+          "inicio": 1.4
+        },
+        {
+          "texto": "is",
+          "inicio": 1.76
+        },
+        {
+          "texto": "wet.",
+          "inicio": 2
+        },
+        {
+          "texto": "Paper",
+          "inicio": 2.933
+        },
+        {
+          "texto": "money",
+          "inicio": 3.24
+        },
+        {
+          "texto": "rots.",
+          "inicio": 3.52
+        },
+        {
+          "texto": "And",
+          "inicio": 4.32
+        },
+        {
+          "texto": "mold",
+          "inicio": 4.52
+        },
+        {
+          "texto": "doesn't",
+          "inicio": 4.88
+        },
+        {
+          "texto": "care",
+          "inicio": 5.2
+        },
+        {
+          "texto": "how",
+          "inicio": 5.52
+        },
+        {
+          "texto": "rich",
+          "inicio": 5.68
+        },
+        {
+          "texto": "you",
+          "inicio": 5.92
+        },
+        {
+          "texto": "are.",
+          "inicio": 6.08
+        }
+      ],
+      "duracaoFala": 6.72,
+      "audio": "audio/ep02-s02.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Here's the problem. Dirt is wet. Paper money rots. And mold doesn't care how rich you are.",
+      "foco": {
+        "x": 55,
+        "y": 60
+      }
+    },
+    {
+      "id": "s03",
+      "duracao": 7.35,
+      "fala": "Pablo Escobar's brother said they lost ten percent of their cash every year. To rats, water and rot.",
+      "descricao": "Dark warehouse: rotting stacks of cash, rats chewing the bundles",
+      "painel": {
+        "cash": 10000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "palavras": [
+        {
+          "texto": "Pablo",
+          "inicio": 0
+        },
+        {
+          "texto": "Escobar's",
+          "inicio": 0.44
+        },
+        {
+          "texto": "brother",
+          "inicio": 0.96
+        },
+        {
+          "texto": "said",
+          "inicio": 1.44
+        },
+        {
+          "texto": "they",
+          "inicio": 1.6
+        },
+        {
+          "texto": "lost",
+          "inicio": 1.76
+        },
+        {
+          "texto": "ten",
+          "inicio": 2.16
+        },
+        {
+          "texto": "percent",
+          "inicio": 2.4
+        },
+        {
+          "texto": "of",
+          "inicio": 2.76
+        },
+        {
+          "texto": "their",
+          "inicio": 2.88
+        },
+        {
+          "texto": "cash",
+          "inicio": 3.04
+        },
+        {
+          "texto": "every",
+          "inicio": 3.6
+        },
+        {
+          "texto": "year.",
+          "inicio": 4
+        },
+        {
+          "texto": "To",
+          "inicio": 4.8
+        },
+        {
+          "texto": "rats,",
+          "inicio": 5.28
+        },
+        {
+          "texto": "water",
+          "inicio": 5.68
+        },
+        {
+          "texto": "and",
+          "inicio": 6.2
+        },
+        {
+          "texto": "rot.",
+          "inicio": 6.72
+        }
+      ],
+      "duracaoFala": 7.2,
+      "audio": "audio/ep02-s03.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Pablo Escobar's brother said they lost ten percent of their cash every year. To rats, water and rot.",
+      "ilustracao": "cenas/ep02-armazem.png",
+      "camera": {
+        "de": {
+          "zoom": 1.25,
+          "x": 0,
+          "y": 40
+        },
+        "para": {
+          "zoom": 1.08,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "foco": {
+        "x": 45,
+        "y": 62
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "fundo": "escuro",
+        "kicker": "Pablo Escobar's cartel",
+        "titulo": "Lost to rats, water and rot",
+        "destaque": "10% a year",
+        "corDestaque": "destaque",
+        "nota": "Roberto Escobar, \"The Accountant's Story\"",
+        "ancora": "ten",
+        "inicio": 2.11
+      }
+    },
+    {
+      "id": "s04",
+      "duracao": 6.23,
+      "fala": "On ten million, that's a million dollars gone. Every year. Nobody even stole it.",
+      "descricao": "Gráfico (sem ilustração)",
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "overlay": {
+        "tipo": "grafico",
+        "fundo": "bege",
+        "kicker": "Buried money shrinks",
+        "titulo": "-10% a year.",
+        "sub": "Nobody stole it.",
+        "limite": 10000000,
+        "rotuloLimite": "WHAT YOU BURIED",
+        "barras": [
+          {
+            "rotulo": "TODAY",
+            "valor": 10000000
+          },
+          {
+            "rotulo": "YEAR 1",
+            "valor": 9000000
+          },
+          {
+            "rotulo": "YEAR 2",
+            "valor": 8100000
+          },
+          {
+            "rotulo": "YEAR 3",
+            "valor": 7290000
+          }
+        ]
+      },
+      "palavras": [
+        {
+          "texto": "On",
+          "inicio": 0
+        },
+        {
+          "texto": "ten",
+          "inicio": 0.36
+        },
+        {
+          "texto": "million,",
+          "inicio": 0.56
+        },
+        {
+          "texto": "that's",
+          "inicio": 1.28
+        },
+        {
+          "texto": "a",
+          "inicio": 1.44
+        },
+        {
+          "texto": "million",
+          "inicio": 1.6
+        },
+        {
+          "texto": "dollars",
+          "inicio": 2
+        },
+        {
+          "texto": "gone.",
+          "inicio": 2.48
+        },
+        {
+          "texto": "Every",
+          "inicio": 3.28
+        },
+        {
+          "texto": "year.",
+          "inicio": 3.68
+        },
+        {
+          "texto": "Nobody",
+          "inicio": 4.56
+        },
+        {
+          "texto": "even",
+          "inicio": 4.8
+        },
+        {
+          "texto": "stole",
+          "inicio": 5.12
+        },
+        {
+          "texto": "it.",
+          "inicio": 5.44
+        }
+      ],
+      "duracaoFala": 6.08,
+      "audio": "audio/ep02-s04.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|On ten million, that's a million dollars gone. Every year. Nobody even stole it."
+    },
+    {
+      "id": "s05",
+      "duracao": 3.83,
+      "fala": "So you dig it up early. And half of it looks like this.",
+      "ilustracao": "cenas/ep02-mofo.png",
+      "descricao": "Mint kneeling by the hole, pulling out moldy, rotten cash",
+      "ambiente": "sons/quintal-noite.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.3,
+          "x": 0,
+          "y": -40
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "palavras": [
+        {
+          "texto": "So",
+          "inicio": 0
+        },
+        {
+          "texto": "you",
+          "inicio": 0.24
+        },
+        {
+          "texto": "dig",
+          "inicio": 0.48
+        },
+        {
+          "texto": "it",
+          "inicio": 0.6
+        },
+        {
+          "texto": "up",
+          "inicio": 0.72
+        },
+        {
+          "texto": "early.",
+          "inicio": 1.08
+        },
+        {
+          "texto": "And",
+          "inicio": 1.76
+        },
+        {
+          "texto": "half",
+          "inicio": 1.96
+        },
+        {
+          "texto": "of",
+          "inicio": 2.12
+        },
+        {
+          "texto": "it",
+          "inicio": 2.24
+        },
+        {
+          "texto": "looks",
+          "inicio": 2.52
+        },
+        {
+          "texto": "like",
+          "inicio": 2.76
+        },
+        {
+          "texto": "this.",
+          "inicio": 2.96
+        }
+      ],
+      "duracaoFala": 3.68,
+      "audio": "audio/ep02-s05.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|So you dig it up early. And half of it looks like this.",
+      "foco": {
+        "x": 50,
+        "y": 45
+      }
+    },
+    {
+      "id": "s06",
+      "duracao": 7.75,
+      "fala": "The Treasury can replace ruined bills. You mail them in, explain what happened, and wait. Up to three years.",
+      "descricao": "Cartão bege (sem ilustração)",
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 15
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "fundo": "bege",
+        "kicker": "U.S. Treasury · damaged money",
+        "titulo": "Replace rotten bills?",
+        "destaque": "6–36 months",
+        "sub": "Mail them in. Explain what happened. Wait.",
+        "nota": "Bureau of Engraving and Printing"
+      },
+      "palavras": [
+        {
+          "texto": "The",
+          "inicio": 0
+        },
+        {
+          "texto": "Treasury",
+          "inicio": 0.16
+        },
+        {
+          "texto": "can",
+          "inicio": 0.64
+        },
+        {
+          "texto": "replace",
+          "inicio": 1.04
+        },
+        {
+          "texto": "ruined",
+          "inicio": 1.36
+        },
+        {
+          "texto": "bills.",
+          "inicio": 1.76
+        },
+        {
+          "texto": "You",
+          "inicio": 2.64
+        },
+        {
+          "texto": "mail",
+          "inicio": 2.84
+        },
+        {
+          "texto": "them",
+          "inicio": 3.04
+        },
+        {
+          "texto": "in,",
+          "inicio": 3.2
+        },
+        {
+          "texto": "explain",
+          "inicio": 3.6
+        },
+        {
+          "texto": "what",
+          "inicio": 4.08
+        },
+        {
+          "texto": "happened,",
+          "inicio": 4.2
+        },
+        {
+          "texto": "and",
+          "inicio": 4.88
+        },
+        {
+          "texto": "wait.",
+          "inicio": 5.12
+        },
+        {
+          "texto": "Up",
+          "inicio": 5.84
+        },
+        {
+          "texto": "to",
+          "inicio": 6.04
+        },
+        {
+          "texto": "three",
+          "inicio": 6.36
+        },
+        {
+          "texto": "years.",
+          "inicio": 6.64
+        }
+      ],
+      "duracaoFala": 7.6,
+      "audio": "audio/ep02-s06.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|The Treasury can replace ruined bills. You mail them in, explain what happened, and wait. Up to three years."
+    },
+    {
+      "id": "s07",
+      "duracao": 6.71,
+      "fala": "And when you finally spend it? Pay more than ten grand in cash for a car, and the dealer reports you too.",
+      "descricao": "Car dealership: Mint dumping cash on the desk, salesman filling a form",
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 40
+      },
+      "palavras": [
+        {
+          "texto": "And",
+          "inicio": 0
+        },
+        {
+          "texto": "when",
+          "inicio": 0.16
+        },
+        {
+          "texto": "you",
+          "inicio": 0.32
+        },
+        {
+          "texto": "finally",
+          "inicio": 0.48
+        },
+        {
+          "texto": "spend",
+          "inicio": 0.96
+        },
+        {
+          "texto": "it?",
+          "inicio": 1.28
+        },
+        {
+          "texto": "Pay",
+          "inicio": 1.84
+        },
+        {
+          "texto": "more",
+          "inicio": 2
+        },
+        {
+          "texto": "than",
+          "inicio": 2.16
+        },
+        {
+          "texto": "ten",
+          "inicio": 2.4
+        },
+        {
+          "texto": "grand",
+          "inicio": 2.72
+        },
+        {
+          "texto": "in",
+          "inicio": 3.12
+        },
+        {
+          "texto": "cash",
+          "inicio": 3.28
+        },
+        {
+          "texto": "for",
+          "inicio": 3.68
+        },
+        {
+          "texto": "a",
+          "inicio": 3.8
+        },
+        {
+          "texto": "car,",
+          "inicio": 3.92
+        },
+        {
+          "texto": "and",
+          "inicio": 4.56
+        },
+        {
+          "texto": "the",
+          "inicio": 4.72
+        },
+        {
+          "texto": "dealer",
+          "inicio": 4.96
+        },
+        {
+          "texto": "reports",
+          "inicio": 5.36
+        },
+        {
+          "texto": "you",
+          "inicio": 5.68
+        },
+        {
+          "texto": "too.",
+          "inicio": 5.84
+        }
+      ],
+      "duracaoFala": 6.56,
+      "audio": "audio/ep02-s07.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|And when you finally spend it? Pay more than ten grand in cash for a car, and the dealer reports you too.",
+      "ilustracao": "cenas/ep02-concessionaria.png",
+      "camera": {
+        "de": {
+          "zoom": 1.08,
+          "x": 40,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.2,
+          "x": -40,
+          "y": 20
+        }
+      },
+      "foco": {
+        "x": 35,
+        "y": 55
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "fundo": "bege",
+        "kicker": "Spending it",
+        "titulo": "Cash over $10,000 at a business",
+        "destaque": "Reported.",
+        "corDestaque": "destaque",
+        "sub": "The seller files IRS Form 8300.",
+        "nota": "26 U.S.C. § 6050I",
+        "ancora": "ten",
+        "inicio": 2.35
+      }
+    },
+    {
+      "id": "s08",
+      "duracao": 8.15,
+      "fala": "Flying it out? Airports use dogs that smell cash. One airport found a hundred and seventy thousand dollars in a month.",
+      "ilustracao": "cenas/ep02-aeroporto.png",
+      "descricao": "Airport checkpoint: detector dog sniffing Mint's suitcase",
+      "ambiente": "sons/aeroporto.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.25,
+          "x": 0,
+          "y": 40
+        },
+        "para": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 70
+      },
+      "palavras": [
+        {
+          "texto": "Flying",
+          "inicio": 0
+        },
+        {
+          "texto": "it",
+          "inicio": 0.36
+        },
+        {
+          "texto": "out?",
+          "inicio": 0.48
+        },
+        {
+          "texto": "Airports",
+          "inicio": 1.24
+        },
+        {
+          "texto": "use",
+          "inicio": 1.68
+        },
+        {
+          "texto": "dogs",
+          "inicio": 1.92
+        },
+        {
+          "texto": "that",
+          "inicio": 2.4
+        },
+        {
+          "texto": "smell",
+          "inicio": 2.56
+        },
+        {
+          "texto": "cash.",
+          "inicio": 2.88
+        },
+        {
+          "texto": "One",
+          "inicio": 3.84
+        },
+        {
+          "texto": "airport",
+          "inicio": 4.08
+        },
+        {
+          "texto": "found",
+          "inicio": 4.6
+        },
+        {
+          "texto": "a",
+          "inicio": 4.88
+        },
+        {
+          "texto": "hundred",
+          "inicio": 4.933
+        },
+        {
+          "texto": "and",
+          "inicio": 5.28
+        },
+        {
+          "texto": "seventy",
+          "inicio": 5.44
+        },
+        {
+          "texto": "thousand",
+          "inicio": 6
+        },
+        {
+          "texto": "dollars",
+          "inicio": 6.52
+        },
+        {
+          "texto": "in",
+          "inicio": 6.88
+        },
+        {
+          "texto": "a",
+          "inicio": 6.96
+        },
+        {
+          "texto": "month.",
+          "inicio": 7.52
+        }
+      ],
+      "duracaoFala": 8,
+      "audio": "audio/ep02-s08.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Flying it out? Airports use dogs that smell cash. One airport found a hundred and seventy thousand dollars in a month.",
+      "foco": {
+        "x": 45,
+        "y": 58
+      },
+      "legendaTopo": 1480,
+      "overlay": {
+        "tipo": "cartao",
+        "ancora": "One",
+        "fundo": "escuro",
+        "kicker": "Washington Dulles airport · 2025",
+        "titulo": "Found with cash-sniffing dogs",
+        "destaque": "$171,000",
+        "corDestaque": "destaque",
+        "sub": "In about one month.",
+        "nota": "U.S. Customs and Border Protection",
+        "inicio": 3.79
+      }
+    },
+    {
+      "id": "s09",
+      "duracao": 11.32,
+      "fala": "So burying it only buys time. And now your money's dirty and damp. Part three: where do you spend it first? Comment CASINO or CAR.",
+      "ilustracao": "cenas/ep02-dilema.png",
+      "descricao": "Mint's apartment: muddy Mint torn between casino chips and a car key",
+      "ambiente": "sons/chuva-porao.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.35,
+          "x": 0,
+          "y": 100
+        },
+        "para": {
+          "zoom": 1.08,
+          "x": 0,
+          "y": 60
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 70
+      },
+      "palavras": [
+        {
+          "texto": "So",
+          "inicio": 0
+        },
+        {
+          "texto": "burying",
+          "inicio": 0.32
+        },
+        {
+          "texto": "it",
+          "inicio": 0.84
+        },
+        {
+          "texto": "only",
+          "inicio": 1.04
+        },
+        {
+          "texto": "buys",
+          "inicio": 1.32
+        },
+        {
+          "texto": "time.",
+          "inicio": 2.04
+        },
+        {
+          "texto": "And",
+          "inicio": 2.587
+        },
+        {
+          "texto": "now",
+          "inicio": 2.72
+        },
+        {
+          "texto": "your",
+          "inicio": 2.88
+        },
+        {
+          "texto": "money's",
+          "inicio": 3.04
+        },
+        {
+          "texto": "dirty",
+          "inicio": 3.52
+        },
+        {
+          "texto": "and",
+          "inicio": 3.8
+        },
+        {
+          "texto": "damp.",
+          "inicio": 3.96
+        },
+        {
+          "texto": "Part",
+          "inicio": 4.8
+        },
+        {
+          "texto": "three:",
+          "inicio": 5.12
+        },
+        {
+          "texto": "where",
+          "inicio": 5.84
+        },
+        {
+          "texto": "do",
+          "inicio": 6
+        },
+        {
+          "texto": "you",
+          "inicio": 6.08
+        },
+        {
+          "texto": "spend",
+          "inicio": 6.24
+        },
+        {
+          "texto": "it",
+          "inicio": 6.48
+        },
+        {
+          "texto": "first?",
+          "inicio": 6.64
+        },
+        {
+          "texto": "Comment",
+          "inicio": 7.44
+        },
+        {
+          "texto": "CASINO",
+          "inicio": 7.84
+        },
+        {
+          "texto": "or",
+          "inicio": 8.56
+        },
+        {
+          "texto": "CAR.",
+          "inicio": 8.8
+        }
+      ],
+      "duracaoFala": 9.52,
+      "audio": "audio/ep02-s09.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|So burying it only buys time. And now your money's dirty and damp. Part three: where do you spend it first? Comment CASINO or CAR.",
+      "foco": {
+        "x": 50,
+        "y": 50
+      },
+      "overlay": {
+        "tipo": "parte2",
+        "ancora": "Comment",
+        "kicker": "Burying only buys time",
+        "linha1": "PART 3",
+        "linha2": "drops tomorrow.",
+        "sub": [
+          "Casino or car?",
+          "Comment CASINO or CAR. Most votes wins."
+        ],
+        "inicio": 7.39
+      }
+    }
+  ]
+}

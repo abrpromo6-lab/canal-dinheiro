@@ -31,7 +31,7 @@ export const PalavraChave: React.FC<{
         fontFamily: fonte,
       }}
     >
-      {kicker ? <Kicker cor={cores.cinzaEscuro} style={entrar(frame, fps, 0)}>{kicker}</Kicker> : null}
+      {kicker ? <Kicker cor={tela ? cores.cinzaEscuro : cores.branco} style={entrar(frame, fps, Math.min(0, atrasoTexto - 4))}>{kicker}</Kicker> : null}
       <div
         style={{
           marginTop: kicker ? 40 : 0,

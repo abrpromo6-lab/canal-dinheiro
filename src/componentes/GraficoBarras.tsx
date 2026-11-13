@@ -77,7 +77,9 @@ export const GraficoBarras: React.FC<{
                   overflow: "hidden",
                 }}
               >
-                ${(b.valor / 1000).toLocaleString("en-US", { maximumFractionDigits: 1 })}k
+                {b.valor >= 1_000_000
+                  ? `$${(b.valor / 1_000_000).toFixed(1)}M`
+                  : `$${(b.valor / 1000).toLocaleString("en-US", { maximumFractionDigits: 1 })}k`}
               </div>
             );
           })}
