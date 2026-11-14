@@ -39,7 +39,7 @@ const opc = Object.fromEntries(
 const arquivoEp = args.find((a) => !a.startsWith("--")) ?? "src/episodios/ep01.json";
 
 const PAUSA_FIM = 0.15; // respiro depois de cada fala (s)
-const SEGURA_FINAL = 1.8; // tempo extra na última cena (tela final)
+const SEGURA_FINAL = 2.5; // tempo extra na última cena (tela final)
 
 const api = async (rota, init = {}) => {
   const r = await fetch(API + rota, { ...init, headers: { "xi-api-key": CHAVE, "Content-Type": "application/json", ...init.headers } });

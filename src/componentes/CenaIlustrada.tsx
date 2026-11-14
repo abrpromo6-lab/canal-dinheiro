@@ -6,7 +6,14 @@ import { Atmosfera } from "./Atmosfera";
 const PARADA: { de: Camera; para: Camera } = { de: { zoom: 1.05, x: 0, y: 0 }, para: { zoom: 1.12, x: 0, y: 0 } };
 
 /** Ilustração em tela cheia com zoom/pan lento. Sem imagem, mostra um placeholder. */
-export const CenaIlustrada: React.FC<{ cena: Cena; arquivo: string | null }> = ({ cena, arquivo }) => {
+export type Tratamento = { brilho: number; saturacao: number; contraste: number; sombra: number };
+export const TRATAMENTO_PADRAO: Tratamento = { brilho: 0.92, saturacao: 0.88, contraste: 1.08, sombra: 0 };
+
+export const CenaIlustrada: React.FC<{ cena: Cena; arquivo: string | null; tratamento?: Tratamento }> = ({
+  cena,
+  arquivo,
+  tratamento = TRATAMENTO_PADRAO,
+}) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
   if (!cena.ilustracao) return <AbsoluteFill style={{ backgroundColor: cores.fundo }} />;
@@ -26,13 +33,20 @@ export const CenaIlustrada: React.FC<{ cena: Cena; arquivo: string | null }> = (
         {arquivo ? (
           <Img
             src={staticFile(arquivo)}
-            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "contrast(1.08) saturate(0.88) brightness(0.92)" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: `contrast(${tratamento.contraste}) saturate(${tratamento.saturacao}) brightness(${tratamento.brilho})`,
+            }}
           />
         ) : (
           <Placeholder cena={cena} />
         )}
       </AbsoluteFill>
       <Atmosfera foco={cena.foco} />
+      {/* Escurecida extra do episódio (0 = nenhuma) */}
+      {tratamento.sombra > 0 ? <AbsoluteFill style={{ backgroundColor: `rgba(8,10,12,${tratamento.sombra})` }} /> : null}
       {/* Leve escurecida embaixo para a legenda */}
       <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%)" }} />
     </AbsoluteFill>

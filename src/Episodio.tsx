@@ -8,12 +8,13 @@ import { CartaoTexto } from "./componentes/CartaoTexto";
 import { GraficoBarras } from "./componentes/GraficoBarras";
 import { PalavraChave } from "./componentes/PalavraChave";
 import { TelaParte2 } from "./componentes/TelaParte2";
+import { FinalNeon } from "./componentes/FinalNeon";
 import type { EpisodioProps, Overlay, Painel } from "./tipos";
 import { momentoDaPalavra, misturar, NIVEIS, presencaVoz, type Intervalo } from "./mixagem";
 
 const telaCheia = (o: Overlay) => o.tipo !== "palavra" || o.tela === true;
 
-const ConteudoOverlay: React.FC<{ overlay: Overlay; atrasoTexto?: number }> = ({ overlay, atrasoTexto }) => {
+const ConteudoOverlay: React.FC<{ overlay: Overlay; atrasoTexto?: number; cartaoEm: number }> = ({ overlay, atrasoTexto, cartaoEm }) => {
   switch (overlay.tipo) {
     case "cartao":
       return <CartaoTexto {...overlay} />;
@@ -23,6 +24,8 @@ const ConteudoOverlay: React.FC<{ overlay: Overlay; atrasoTexto?: number }> = ({
       return <PalavraChave {...overlay} atrasoTexto={atrasoTexto} />;
     case "parte2":
       return <TelaParte2 {...overlay} />;
+    case "neon":
+      return <FinalNeon {...overlay} cartaoEm={cartaoEm} />;
   }
 };
 
@@ -65,20 +68,35 @@ export const Episodio: React.FC<EpisodioProps> = ({ episodio, imagensDisponiveis
         // Palavra-chave: carimba (e o impacto toca) no momento em que a palavra é falada.
         const segPalavra = c.overlay?.tipo === "palavra" ? momentoDaPalavra(c.palavras, c.overlay.texto) : undefined;
         const quadroPalavra = segPalavra !== undefined ? Math.max(atrasoOverlay, Math.round(segPalavra * fps)) : atrasoOverlay + 4;
+        // Final de votação: o painel sai quando os botões entram; a tela preta vem quando a fala acaba.
+        const ehFinal = c.overlay?.tipo === "neon";
+        const fimFala = Math.round((c.duracaoFala ?? c.duracao) * fps);
         return (
           <Sequence key={c.id} from={c.inicio} durationInFrames={c.quadros} name={`${c.id} · ${c.descricao}`}>
             {/* Ordem das camadas: ilustração → legenda → painel → overlay (o overlay de tela cheia cobre os outros) */}
-            <CenaIlustrada cena={c} arquivo={c.ilustracao ? imagensDisponiveis[c.ilustracao] ?? null : null} />
+            <CenaIlustrada
+              cena={c}
+              arquivo={c.ilustracao ? imagensDisponiveis[c.ilustracao] ?? null : null}
+              tratamento={episodio.tratamento}
+            />
             <Legenda
               cena={c}
               velocidade={episodio.velocidadeFala}
-              ateQuadro={c.overlay?.tipo === "palavra" && !c.overlay.tela ? atrasoOverlay : undefined}
+              ateQuadro={
+                (c.overlay?.tipo === "palavra" && !c.overlay.tela) || c.overlay?.tipo === "neon" ? atrasoOverlay : undefined
+              }
             />
-            <PainelDinheiro de={painelAnterior} para={c.painel} />
+            <Sequence durationInFrames={ehFinal ? Math.max(1, atrasoOverlay) : c.quadros} layout="none" name="painel">
+              <PainelDinheiro de={painelAnterior} para={c.painel} />
+            </Sequence>
             {c.overlay ? (
               <Sequence from={atrasoOverlay} durationInFrames={Math.max(1, fimOverlay - atrasoOverlay)} name={`${c.id} · ${c.overlay.tipo}`}>
                 {/* Na 1ª cena a palavra já está na tela no quadro 0 (é a "capa" que aparece no feed) */}
-                <ConteudoOverlay overlay={c.overlay} atrasoTexto={i === 0 ? -20 : quadroPalavra - atrasoOverlay} />
+                <ConteudoOverlay
+                  overlay={c.overlay}
+                  atrasoTexto={i === 0 ? -20 : quadroPalavra - atrasoOverlay}
+                  cartaoEm={fimFala - atrasoOverlay}
+                />
               </Sequence>
             ) : null}
             {c.audio ? <Audio src={staticFile(c.audio)} volume={NIVEIS.voz} /> : null}

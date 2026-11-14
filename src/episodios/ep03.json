@@ -1,0 +1,984 @@
+{
+  "id": "ep03",
+  "serie": "$10M in cash",
+  "titulo": "Part 3: The Casino",
+  "fps": 30,
+  "velocidadeFala": 2.7,
+  "sons": {
+    "musica": "sons/musica-tensa.mp3",
+    "corte": "sons/whoosh.mp3",
+    "impacto": "sons/impacto.mp3",
+    "tique": "sons/tique.mp3"
+  },
+  "voz": {
+    "nome": "Liam - Viral Short-Form Storyteller (biblioteca)",
+    "id": "VCgLBmBjldJmfphyB8sZ",
+    "modelo": "eleven_v4",
+    "ajustes": {
+      "stability": 0.45,
+      "similarity_boost": 0.8,
+      "style": 0.3,
+      "use_speaker_boost": true,
+      "speed": 1.15
+    }
+  },
+  "tratamento": {
+    "brilho": 0.72,
+    "saturacao": 0.7,
+    "contraste": 1.12,
+    "sombra": 0.15
+  },
+  "cenas": [
+    {
+      "id": "s01",
+      "duracao": 7.03,
+      "fala": "Part three. You picked the casino. Buy chips with dirty cash, cash out, walk away clean. Right?",
+      "ilustracao": "cenas/ep03-salao.png",
+      "descricao": "Casino floor at night: Mint walking in with a duffel bag of cash",
+      "ambiente": "sons/casino.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.25,
+          "x": 0,
+          "y": 60
+        },
+        "para": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 0
+      },
+      "palavras": [
+        {
+          "texto": "Part",
+          "inicio": 0
+        },
+        {
+          "texto": "three.",
+          "inicio": 0.32
+        },
+        {
+          "texto": "You",
+          "inicio": 1.12
+        },
+        {
+          "texto": "picked",
+          "inicio": 1.4
+        },
+        {
+          "texto": "the",
+          "inicio": 1.56
+        },
+        {
+          "texto": "casino.",
+          "inicio": 1.72
+        },
+        {
+          "texto": "Buy",
+          "inicio": 2.72
+        },
+        {
+          "texto": "chips",
+          "inicio": 2.96
+        },
+        {
+          "texto": "with",
+          "inicio": 3.28
+        },
+        {
+          "texto": "dirty",
+          "inicio": 3.48
+        },
+        {
+          "texto": "cash,",
+          "inicio": 3.68
+        },
+        {
+          "texto": "cash",
+          "inicio": 4.4
+        },
+        {
+          "texto": "out,",
+          "inicio": 4.72
+        },
+        {
+          "texto": "walk",
+          "inicio": 5.32
+        },
+        {
+          "texto": "away",
+          "inicio": 5.56
+        },
+        {
+          "texto": "clean.",
+          "inicio": 5.84
+        },
+        {
+          "texto": "Right?",
+          "inicio": 6.56
+        }
+      ],
+      "duracaoFala": 6.88,
+      "audio": "audio/ep03-s01.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Part three. You picked the casino. Buy chips with dirty cash, cash out, walk away clean. Right?",
+      "foco": {
+        "x": 50,
+        "y": 56
+      },
+      "overlay": {
+        "tipo": "palavra",
+        "inicio": 0,
+        "kicker": "Part 3",
+        "texto": "THE CASINO"
+      }
+    },
+    {
+      "id": "s02",
+      "duracao": 7.19,
+      "fala": "Wrong. Trade more than ten thousand in cash, and the casino files a report. With your name on it.",
+      "ilustracao": "cenas/ep03-caixa.png",
+      "descricao": "Casino cage: Mint pushing stacks of cash through the window, clerk asking for ID",
+      "ambiente": "sons/casino.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.08,
+          "x": 40,
+          "y": 0
+        },
+        "para": {
+          "zoom": 1.2,
+          "x": -30,
+          "y": 20
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 15
+      },
+      "palavras": [
+        {
+          "texto": "Wrong.",
+          "inicio": 0
+        },
+        {
+          "texto": "Trade",
+          "inicio": 1.24
+        },
+        {
+          "texto": "more",
+          "inicio": 1.44
+        },
+        {
+          "texto": "than",
+          "inicio": 1.6
+        },
+        {
+          "texto": "ten",
+          "inicio": 1.84
+        },
+        {
+          "texto": "thousand",
+          "inicio": 2.16
+        },
+        {
+          "texto": "in",
+          "inicio": 2.56
+        },
+        {
+          "texto": "cash,",
+          "inicio": 2.92
+        },
+        {
+          "texto": "and",
+          "inicio": 3.24
+        },
+        {
+          "texto": "the",
+          "inicio": 3.36
+        },
+        {
+          "texto": "casino",
+          "inicio": 3.56
+        },
+        {
+          "texto": "files",
+          "inicio": 4
+        },
+        {
+          "texto": "a",
+          "inicio": 4.28
+        },
+        {
+          "texto": "report.",
+          "inicio": 4.8
+        },
+        {
+          "texto": "With",
+          "inicio": 5.44
+        },
+        {
+          "texto": "your",
+          "inicio": 5.6
+        },
+        {
+          "texto": "name",
+          "inicio": 5.92
+        },
+        {
+          "texto": "on",
+          "inicio": 6.24
+        },
+        {
+          "texto": "it.",
+          "inicio": 6.4
+        }
+      ],
+      "duracaoFala": 7.04,
+      "audio": "audio/ep03-s02.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Wrong. Trade more than ten thousand in cash, and the casino files a report. With your name on it.",
+      "foco": {
+        "x": 40,
+        "y": 55
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "ancora": "ten",
+        "fundo": "bege",
+        "kicker": "Casino rule",
+        "titulo": "Cash in or out over",
+        "destaque": "$10,000",
+        "sub": "= a report to the government. ID required.",
+        "nota": "31 CFR § 1021.311",
+        "inicio": 1.79
+      }
+    },
+    {
+      "id": "s03",
+      "duracao": 5.11,
+      "fala": "Different tables, different windows, same day? They add it all up.",
+      "descricao": "Gráfico (sem ilustração)",
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 30
+      },
+      "overlay": {
+        "tipo": "grafico",
+        "fundo": "bege",
+        "kicker": "One gaming day",
+        "titulo": "They add it up.",
+        "limite": 10000,
+        "rotuloLimite": "$10,000 · REPORTED",
+        "barras": [
+          {
+            "rotulo": "TABLE",
+            "valor": 4000
+          },
+          {
+            "rotulo": "SLOTS",
+            "valor": 3000
+          },
+          {
+            "rotulo": "CAGE",
+            "valor": 4000
+          },
+          {
+            "rotulo": "TOTAL",
+            "valor": 11000
+          }
+        ]
+      },
+      "palavras": [
+        {
+          "texto": "Different",
+          "inicio": 0
+        },
+        {
+          "texto": "tables,",
+          "inicio": 0.4
+        },
+        {
+          "texto": "different",
+          "inicio": 1.28
+        },
+        {
+          "texto": "windows,",
+          "inicio": 1.72
+        },
+        {
+          "texto": "same",
+          "inicio": 2.32
+        },
+        {
+          "texto": "day?",
+          "inicio": 2.72
+        },
+        {
+          "texto": "They",
+          "inicio": 3.56
+        },
+        {
+          "texto": "add",
+          "inicio": 3.76
+        },
+        {
+          "texto": "it",
+          "inicio": 3.92
+        },
+        {
+          "texto": "all",
+          "inicio": 4.08
+        },
+        {
+          "texto": "up.",
+          "inicio": 4.32
+        }
+      ],
+      "duracaoFala": 4.96,
+      "audio": "audio/ep03-s03.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Different tables, different windows, same day? They add it all up."
+    },
+    {
+      "id": "s04",
+      "duracao": 6.15,
+      "fala": "And the eye in the sky never blinks. It's watching who buys chips... and who barely plays.",
+      "ilustracao": "cenas/ep03-vigilancia.png",
+      "descricao": "Casino surveillance room: wall of monitors, one zoomed on Mint",
+      "ambiente": "sons/escritorio-noite.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 40
+        },
+        "para": {
+          "zoom": 1.22,
+          "x": 0,
+          "y": 90
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 45
+      },
+      "palavras": [
+        {
+          "texto": "And",
+          "inicio": 0
+        },
+        {
+          "texto": "the",
+          "inicio": 0.24
+        },
+        {
+          "texto": "eye",
+          "inicio": 0.4
+        },
+        {
+          "texto": "in",
+          "inicio": 0.52
+        },
+        {
+          "texto": "the",
+          "inicio": 0.64
+        },
+        {
+          "texto": "sky",
+          "inicio": 0.8
+        },
+        {
+          "texto": "never",
+          "inicio": 1.28
+        },
+        {
+          "texto": "blinks.",
+          "inicio": 1.6
+        },
+        {
+          "texto": "It's",
+          "inicio": 2.373
+        },
+        {
+          "texto": "watching",
+          "inicio": 2.68
+        },
+        {
+          "texto": "who",
+          "inicio": 3.04
+        },
+        {
+          "texto": "buys",
+          "inicio": 3.16
+        },
+        {
+          "texto": "chips...",
+          "inicio": 3.52
+        },
+        {
+          "texto": "and",
+          "inicio": 4.347
+        },
+        {
+          "texto": "who",
+          "inicio": 4.48
+        },
+        {
+          "texto": "barely",
+          "inicio": 4.64
+        },
+        {
+          "texto": "plays.",
+          "inicio": 5.44
+        }
+      ],
+      "duracaoFala": 6,
+      "audio": "audio/ep03-s04.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|And the eye in the sky never blinks. It's watching who buys chips... and who barely plays.",
+      "foco": {
+        "x": 50,
+        "y": 45
+      }
+    },
+    {
+      "id": "s05",
+      "duracao": 6.87,
+      "fala": "Buying chips and barely playing is a textbook red flag. It even has a name: minimal gaming.",
+      "descricao": "Same surveillance room, zoomed on the monitor showing Mint",
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 60
+      },
+      "palavras": [
+        {
+          "texto": "Buying",
+          "inicio": 0
+        },
+        {
+          "texto": "chips",
+          "inicio": 0.4
+        },
+        {
+          "texto": "and",
+          "inicio": 0.8
+        },
+        {
+          "texto": "barely",
+          "inicio": 1.04
+        },
+        {
+          "texto": "playing",
+          "inicio": 1.44
+        },
+        {
+          "texto": "is",
+          "inicio": 1.92
+        },
+        {
+          "texto": "a",
+          "inicio": 2.16
+        },
+        {
+          "texto": "textbook",
+          "inicio": 2.24
+        },
+        {
+          "texto": "red",
+          "inicio": 2.88
+        },
+        {
+          "texto": "flag.",
+          "inicio": 3.44
+        },
+        {
+          "texto": "It",
+          "inicio": 3.92
+        },
+        {
+          "texto": "even",
+          "inicio": 4.12
+        },
+        {
+          "texto": "has",
+          "inicio": 4.32
+        },
+        {
+          "texto": "a",
+          "inicio": 4.44
+        },
+        {
+          "texto": "name:",
+          "inicio": 4.56
+        },
+        {
+          "texto": "minimal",
+          "inicio": 5.28
+        },
+        {
+          "texto": "gaming.",
+          "inicio": 5.76
+        }
+      ],
+      "duracaoFala": 6.72,
+      "audio": "audio/ep03-s05.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Buying chips and barely playing is a textbook red flag. It even has a name: minimal gaming.",
+      "ilustracao": "cenas/ep03-vigilancia.png",
+      "ambiente": "sons/escritorio-noite.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.4,
+          "x": -31,
+          "y": 182
+        },
+        "para": {
+          "zoom": 1.7,
+          "x": -37,
+          "y": 234
+        }
+      },
+      "foco": {
+        "x": 50,
+        "y": 47
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "fundo": "escuro",
+        "kicker": "FinCEN red flag",
+        "destaque": "Minimal gaming",
+        "corDestaque": "destaque",
+        "sub": "Buy chips. Barely play. Cash out.",
+        "nota": "FinCEN guidance FIN-2008-G007",
+        "ancora": "minimal",
+        "inicio": 5.23
+      }
+    },
+    {
+      "id": "s06",
+      "duracao": 8.31,
+      "fala": "So you cash out a little under ten grand to skip the form? Also a red flag. Now there's a suspicious activity report too.",
+      "ilustracao": "cenas/ep03-saque.png",
+      "descricao": "Cash-out window: Mint sliding back chips, sweating; clerk typing",
+      "ambiente": "sons/casino.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.1,
+          "x": -40,
+          "y": 20
+        },
+        "para": {
+          "zoom": 1.22,
+          "x": 30,
+          "y": 40
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 85
+      },
+      "palavras": [
+        {
+          "texto": "So",
+          "inicio": 0
+        },
+        {
+          "texto": "you",
+          "inicio": 0.24
+        },
+        {
+          "texto": "cash",
+          "inicio": 0.48
+        },
+        {
+          "texto": "out",
+          "inicio": 0.72
+        },
+        {
+          "texto": "a",
+          "inicio": 0.88
+        },
+        {
+          "texto": "little",
+          "inicio": 1.04
+        },
+        {
+          "texto": "under",
+          "inicio": 1.44
+        },
+        {
+          "texto": "ten",
+          "inicio": 1.72
+        },
+        {
+          "texto": "grand",
+          "inicio": 1.92
+        },
+        {
+          "texto": "to",
+          "inicio": 2.32
+        },
+        {
+          "texto": "skip",
+          "inicio": 2.48
+        },
+        {
+          "texto": "the",
+          "inicio": 2.68
+        },
+        {
+          "texto": "form?",
+          "inicio": 2.88
+        },
+        {
+          "texto": "Also",
+          "inicio": 3.92
+        },
+        {
+          "texto": "a",
+          "inicio": 4.2
+        },
+        {
+          "texto": "red",
+          "inicio": 4.32
+        },
+        {
+          "texto": "flag.",
+          "inicio": 4.56
+        },
+        {
+          "texto": "Now",
+          "inicio": 5.44
+        },
+        {
+          "texto": "there's",
+          "inicio": 5.64
+        },
+        {
+          "texto": "a",
+          "inicio": 5.84
+        },
+        {
+          "texto": "suspicious",
+          "inicio": 6
+        },
+        {
+          "texto": "activity",
+          "inicio": 6.48
+        },
+        {
+          "texto": "report",
+          "inicio": 7.04
+        },
+        {
+          "texto": "too.",
+          "inicio": 7.6
+        }
+      ],
+      "duracaoFala": 8.16,
+      "audio": "audio/ep03-s06.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|So you cash out a little under ten grand to skip the form? Also a red flag. Now there's a suspicious activity report too.",
+      "foco": {
+        "x": 55,
+        "y": 52
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "ancora": "Also",
+        "fundo": "escuro",
+        "kicker": "Skipping the form",
+        "destaque": "Red flag #2",
+        "corDestaque": "destaque",
+        "sub": "Now there's a Suspicious Activity Report too.",
+        "inicio": 3.87
+      }
+    },
+    {
+      "id": "s07",
+      "duracao": 9.59,
+      "fala": "Even casinos get burned. In 2024, Wynn Las Vegas gave up a hundred and thirty million dollars over illegal money transfers for its gamblers.",
+      "ilustracao": "cenas/ep03-fachada.png",
+      "descricao": "Generic luxury casino tower at night, federal vans outside",
+      "ambiente": "sons/rua-sirene.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.2,
+          "x": 0,
+          "y": -60
+        },
+        "para": {
+          "zoom": 1.05,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 90
+      },
+      "palavras": [
+        {
+          "texto": "Even",
+          "inicio": 0
+        },
+        {
+          "texto": "casinos",
+          "inicio": 0.32
+        },
+        {
+          "texto": "get",
+          "inicio": 0.96
+        },
+        {
+          "texto": "burned.",
+          "inicio": 1.24
+        },
+        {
+          "texto": "In",
+          "inicio": 1.947
+        },
+        {
+          "texto": "2024,",
+          "inicio": 2.12
+        },
+        {
+          "texto": "Wynn",
+          "inicio": 3.173
+        },
+        {
+          "texto": "Las",
+          "inicio": 3.36
+        },
+        {
+          "texto": "Vegas",
+          "inicio": 3.68
+        },
+        {
+          "texto": "gave",
+          "inicio": 4.08
+        },
+        {
+          "texto": "up",
+          "inicio": 4.32
+        },
+        {
+          "texto": "a",
+          "inicio": 4.64
+        },
+        {
+          "texto": "hundred",
+          "inicio": 4.693
+        },
+        {
+          "texto": "and",
+          "inicio": 5.08
+        },
+        {
+          "texto": "thirty",
+          "inicio": 5.28
+        },
+        {
+          "texto": "million",
+          "inicio": 5.76
+        },
+        {
+          "texto": "dollars",
+          "inicio": 6.28
+        },
+        {
+          "texto": "over",
+          "inicio": 6.72
+        },
+        {
+          "texto": "illegal",
+          "inicio": 7.16
+        },
+        {
+          "texto": "money",
+          "inicio": 7.44
+        },
+        {
+          "texto": "transfers",
+          "inicio": 7.8
+        },
+        {
+          "texto": "for",
+          "inicio": 8.24
+        },
+        {
+          "texto": "its",
+          "inicio": 8.4
+        },
+        {
+          "texto": "gamblers.",
+          "inicio": 8.6
+        }
+      ],
+      "duracaoFala": 9.44,
+      "audio": "audio/ep03-s07.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|Even casinos get burned. In 2024, Wynn Las Vegas gave up a hundred and thirty million dollars over illegal money transfers for its gamblers.",
+      "foco": {
+        "x": 55,
+        "y": 55
+      },
+      "overlay": {
+        "tipo": "cartao",
+        "ancora": "Wynn",
+        "fundo": "bege",
+        "kicker": "Real case · 2024",
+        "titulo": "Wynn Las Vegas forfeited",
+        "destaque": "$130M",
+        "sub": "To settle a federal money-transfer investigation.",
+        "nota": "U.S. Department of Justice",
+        "inicio": 3.12
+      }
+    },
+    {
+      "id": "s08",
+      "duracao": 10.26,
+      "fala": "So the casino is just a trap with better lighting. Part four: where does the money go next? Comment HOUSE or CRYPTO.",
+      "ilustracao": "cenas/ep03-dilema.png",
+      "descricao": "Close-up: Mint in the rain staring at the last chip",
+      "ambiente": "sons/chuva-porao.wav",
+      "camera": {
+        "de": {
+          "zoom": 1.15,
+          "x": 0,
+          "y": 40
+        },
+        "para": {
+          "zoom": 1.02,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "painel": {
+        "cash": 9000000,
+        "banked": 0,
+        "suspicion": 90
+      },
+      "palavras": [
+        {
+          "texto": "So",
+          "inicio": 0
+        },
+        {
+          "texto": "the",
+          "inicio": 0.16
+        },
+        {
+          "texto": "casino",
+          "inicio": 0.36
+        },
+        {
+          "texto": "is",
+          "inicio": 0.8
+        },
+        {
+          "texto": "just",
+          "inicio": 1.04
+        },
+        {
+          "texto": "a",
+          "inicio": 1.2
+        },
+        {
+          "texto": "trap",
+          "inicio": 1.36
+        },
+        {
+          "texto": "with",
+          "inicio": 1.88
+        },
+        {
+          "texto": "better",
+          "inicio": 2.12
+        },
+        {
+          "texto": "lighting.",
+          "inicio": 2.32
+        },
+        {
+          "texto": "Part",
+          "inicio": 3.28
+        },
+        {
+          "texto": "four:",
+          "inicio": 3.44
+        },
+        {
+          "texto": "where",
+          "inicio": 4.267
+        },
+        {
+          "texto": "does",
+          "inicio": 4.4
+        },
+        {
+          "texto": "the",
+          "inicio": 4.56
+        },
+        {
+          "texto": "money",
+          "inicio": 4.76
+        },
+        {
+          "texto": "go",
+          "inicio": 5
+        },
+        {
+          "texto": "next?",
+          "inicio": 5.2
+        },
+        {
+          "texto": "Comment",
+          "inicio": 6.187
+        },
+        {
+          "texto": "HOUSE",
+          "inicio": 6.56
+        },
+        {
+          "texto": "or",
+          "inicio": 6.88
+        },
+        {
+          "texto": "CRYPTO.",
+          "inicio": 7.2
+        }
+      ],
+      "duracaoFala": 7.76,
+      "audio": "audio/ep03-s08.mp3",
+      "audioAssinatura": "VCgLBmBjldJmfphyB8sZ|eleven_v4|{\"stability\":0.45,\"similarity_boost\":0.8,\"style\":0.3,\"use_speaker_boost\":true,\"speed\":1.15}|So the casino is just a trap with better lighting. Part four: where does the money go next? Comment HOUSE or CRYPTO.",
+      "foco": {
+        "x": 45,
+        "y": 50
+      },
+      "legendaTopo": 1500,
+      "overlay": {
+        "tipo": "neon",
+        "ancora": "where",
+        "inicio": 4.22,
+        "rotulo": "COMMENT ONE WORD",
+        "opcoes": [
+          "HOUSE",
+          "CRYPTO"
+        ],
+        "kicker": "THE CASINO ALWAYS WATCHES",
+        "linha1": "PART 4",
+        "linha2": "TOMORROW",
+        "sub": [
+          "Comment HOUSE or CRYPTO.",
+          "Your vote decides what Mint does next."
+        ]
+      }
+    }
+  ]
+}

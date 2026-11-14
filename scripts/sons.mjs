@@ -43,6 +43,7 @@ const EFEITOS = {
   corredor: { texto: `empty large marble hall ambience, soft reverb, distant echoing footsteps, low air hum, ${SEM}`, segundos: 20, loop: true },
   "rua-sirene": { texto: `city street at dusk after rain, wet tires passing, distant police siren, light traffic, ${SEM}`, segundos: 20, loop: true },
   "quintal-noite": { texto: `clearly audible backyard night ambience, loud chirping crickets, wind rustling leaves, occasional distant dog bark, shovel digging in dirt, ${SEM}`, segundos: 20, loop: true },
+  casino: { texto: `busy casino floor ambience, slot machine chimes and jingles, poker chips clicking, roulette ball rolling, indistinct crowd murmur, ${SEM}`, segundos: 20, loop: true },
   aeroporto: { texto: `busy airport security checkpoint ambience, rolling suitcases, conveyor belt hum, distant indistinct announcements, ${SEM}`, segundos: 20, loop: true },
 };
 

@@ -79,7 +79,17 @@ Não foi possível medir o desempenho do **estilo** da referência (ilustração
 - Ep02 "You Buried It" pronto: `src/episodios/ep02.json` (65 s, 9 cenas, 7 ilustrações), composição `ep02` (`npm run render:ep02`), roteiro/fontes/publicação em `docs/ep02-roteiro.md`, prompts em `docs/ep02-prompts.md`. Capa: `npx remotion still src/index.ts Capa out/capa-ep02.png --props=...` (usar imagem em que o rosto do Mint fique abaixo do título).
 - Fluxo por episódio: JSON → `node scripts/narrar.mjs src/episodios/epXX.json` → prompts → Abr gera imagens → ajustar `foco`/`legendaTopo`/`camera` por cena → render. Novos ambientes: adicionar em `scripts/sons.mjs`, `node scripts/sons.mjs`, `node scripts/normalizar.mjs <nome>`.
 
+- Ep03 "The Casino" pronto (60 s, 8 cenas, 6 ilustrações): `src/episodios/ep03.json`, `docs/ep03-roteiro.md`, `docs/ep03-prompts.md`, `npm run render:ep03`.
+
+### Decisões do Abr (2026-11-14) — valem para os próximos episódios
+
+- **Cor assinatura nas imagens:** neon laranja `#FF5B2E` em toda ilustração (letreiro sem letras, faixa de luz), refletindo em superfícies, contra o azul-petróleo. É o nosso equivalente ao rosa do canal de referência.
+- **Mais escuro:** as imagens não podem ficar "vivas". Prompts pedem low-key/dessaturado, e o episódio usa `tratamento` no JSON (ep03: brilho .72, saturação .7, contraste 1.12, sombra .15). Ep01/ep02 ficaram no padrão.
+- **Final no formato da referência** (overlay `tipo: "neon"`, componente `FinalNeon`): última imagem é um **close no Mint** (sem balões de pensamento); na pergunta da narração entram "COMMENT ONE WORD" + dois botões (bege e laranja) e o painel some; quando a fala acaba, corta para tela preta "PART X" branco / "TOMORROW" laranja + 2 linhas. Texto sempre nosso, nunca o deles. **Antes de imitar algo da referência, extrair os quadros do vídeo e olhar** (`npx remotion ffmpeg -ss <s> -i ref.mp4 -r 4 ...`).
+- **Voz:** fica o Liam (testamos ~20 vozes; o Abr preferiu manter).
+- Evitar mala com estampa de monograma: pedir "plain black duffel bag, no pattern".
+
 ### Próximo passo
 
-1. Abr publica o ep02 e fixa o comentário "CASINO or CAR?".
-2. Episódio 3 conforme a votação (CASINO ou CAR).
+1. Abr publica o ep03 e fixa o comentário "HOUSE or CRYPTO?".
+2. Episódio 4 conforme a votação (HOUSE ou CRYPTO).

@@ -7,7 +7,8 @@
     "render": "remotion render src/index.ts Episodio out/episodio.mp4",
     "narrar": "node scripts/narrar.mjs",
     "sons": "node scripts/sons.mjs",
-    "render:ep02": "remotion render src/index.ts ep02 out/ep02.mp4"
+    "render:ep02": "remotion render src/index.ts ep02 out/ep02.mp4",
+    "render:ep03": "remotion render src/index.ts ep03 out/ep03.mp4"
   },
   "dependencies": {
     "@remotion/cli": "4.0.536",

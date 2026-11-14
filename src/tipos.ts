@@ -45,7 +45,9 @@ export type Overlay =
       sub?: string;
       nota?: string;
     }
-  | { tipo: "parte2"; inicio?: number; kicker: string; linha1: string; linha2: string; sub: string[] };
+  | { tipo: "parte2"; inicio?: number; kicker: string; linha1: string; linha2: string; sub: string[] }
+  /** Final em duas etapas: botões de votação sobre a imagem, depois tela preta "PART X / TOMORROW" (a partir do ep03). */
+  | { tipo: "neon"; inicio?: number; rotulo: string; opcoes: [string, string]; kicker: string; linha1: string; linha2: string; sub: string[] };
 // `ancora` (em qualquer overlay): palavra da fala em que ele entra. O scripts/narrar.mjs
 // converte em `inicio` com o tempo real do áudio.
 
@@ -84,6 +86,8 @@ export type Episodio = {
   titulo: string;
   fps: number;
   velocidadeFala: number; // palavras por segundo (estimativa até ter a voz)
+  /** Tratamento de cor das ilustrações do episódio (padrão: brilho .92, saturação .88, contraste 1.08, sombra 0). */
+  tratamento?: { brilho: number; saturacao: number; contraste: number; sombra: number };
   /** Sons do episódio em public/. Os que não existirem são ignorados. */
   sons?: {
     musica?: string; // trilha de fundo, em loop, bem baixa
